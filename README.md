@@ -1,5 +1,5 @@
 <h1 align="center">🇮🇳 SATYA-DRISHTI</h1>
-<h3 align="center">AI-Powered Content Moderation System for Digital India 🛡️</h3>
+<h3 align="center">AI-Powered Content Moderation System for Digital India 🔰</h3>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.13-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
@@ -111,7 +111,7 @@ India's digital landscape is growing exponentially with over **700 million inter
 
 ---
 
-## 🏗️ System Architecture
+## ⚙️ System Architecture
 
 <div align="center">
 
@@ -121,7 +121,7 @@ India's digital landscape is growing exponentially with over **700 million inter
 graph TD
     A["🖥️ CLIENT LAYER (React)<br/>Port 5173 - User Interface"] -->|HTTP/REST API| B["⚡ API GATEWAY (FastAPI)<br/>Port 8001 - Request Validation & Routing"]
     B --> C["🔍 PLATFORM DETECTION LAYER<br/>8 Adapters: Reddit, Twitter, Instagram, YouTube, etc."]
-    C --> D["🤖 AI ANALYSIS ENGINE<br/>Text Analysis (7 Models) + Image Analysis (5 Models)<br/>Parallel Processing with ThreadPoolExecutor"]
+    C --> D["🧠 AI ANALYSIS ENGINE<br/>Text Analysis (7 Models) + Image Analysis (5 Models)<br/>Parallel Processing with ThreadPoolExecutor"]
     D --> E["⚠️ RISK SCORING LAYER<br/>Weighted Algorithm: Text (60%) + Image (40%)<br/>5 Levels: SAFE | LOW | MEDIUM | HIGH | CRITICAL"]
     E --> F["⚖️ GOVERNANCE LAYER<br/>Source Verification + Language Detection + Legal Mapping"]
     F --> G["💾 DATA LAYER (MongoDB)<br/>Collections: analyses, statistics, cybercell_reports"]
@@ -170,7 +170,7 @@ graph TD
     A[👤 User] -->|URL Input| B[🔍 URL Analyzer<br/>Validate & Route]
     B -->|Platform Info| C[📥 Content Extractor]
     C -->|Cache| D[💾 Content Cache]
-    C -->|Raw Content| E[🤖 AI Analysis<br/>12 Models]
+    C -->|Raw Content| E[🧠 AI Analysis<br/>12 Models]
     E -->|AI Results| F[⚠️ Risk Scoring<br/>Calculator]
     F -->|Store| G[💾 Analysis Database]
     F -->|Risk Score| H[⚖️ Governance<br/>Processor]
@@ -195,7 +195,7 @@ graph TD
 
 ```mermaid
 graph TD
-    A[🤖 AI ANALYSIS ENGINE] --> B[📝 Text Analysis<br/>7 Models]
+    A[🧠 AI ANALYSIS ENGINE] --> B[📝 Text Analysis<br/>7 Models]
     A --> C[🖼️ Image Analysis<br/>5 Models]
     B --> D[😊 Sentiment]
     B --> E[☠️ Toxicity]
@@ -330,8 +330,8 @@ graph TD
 
 #### Step 1: Clone Repository
 ```bash
-git clone https://github.com/abhishekgiri04/satya-drishti.git
-cd Suart-2-final
+git clone https://github.com/abhishekgiri04/SATYA-DRISHTI.git
+cd SATYA-DRISHTI
 ```
 
 #### Step 2: Backend Setup
@@ -761,8 +761,6 @@ fact_check = api.verify_claim(text="claim to verify")
 vishwaas_score = calculate_credibility(fact_check)
 ```
 
-**📖 [Full Implementation Guide →](docs/round2/ROUND2_IMPROVEMENTS.md#1-government-api-integration)**
-
 ---
 
 ### 2️⃣ 🎥 Video & Audio Content Analysis
@@ -806,8 +804,6 @@ vishwaas_score = calculate_credibility(fact_check)
 - 4x content type coverage (text → text + image + video + audio)
 - Detect deepfakes with 91%+ accuracy
 - Process 30 FPS video in real-time
-
-**📖 [Full Implementation Guide →](docs/round2/ROUND2_IMPROVEMENTS.md#2-video-audio-analysis)**
 
 ---
 
@@ -875,8 +871,6 @@ graph TD
 - **Capacity**: 20 req/min → 1M+ req/day (100x scalability)
 - **Uptime**: 95% → 99.9% (enterprise-grade)
 
-**📖 [Full Implementation Guide →](docs/round2/ROUND2_IMPROVEMENTS.md#3-security-scalability)**
-
 ---
 
 ### 4️⃣ 🧠 Advanced AI Models
@@ -937,8 +931,6 @@ final_prediction = (
 | Fake News | 80% | 91% | +11% |
 | Overall | 87% | 92% | +5% |
 
-**📖 [Full Implementation Guide →](docs/round2/ROUND2_IMPROVEMENTS.md#4-advanced-ai-models)**
-
 ---
 
 ### 5️⃣ 📄 Professional Reporting System
@@ -998,8 +990,6 @@ final_prediction = (
 [Charts, Screenshots, Timeline]
 ```
 
-**📖 [Full Implementation Guide →](docs/round2/ROUND2_IMPROVEMENTS.md#5-reporting-system)**
-
 ---
 
 ### 6️⃣ 📊 Advanced Analytics Dashboard
@@ -1041,8 +1031,6 @@ final_prediction = (
 - 🎯 **Risk distribution**: SAFE/LOW/MEDIUM/HIGH/CRITICAL breakdown
 - 📱 **Platform analysis**: Twitter vs Reddit vs Instagram threats
 - 🔮 **Predictions**: ML-based risk forecasting
-
-**📖 [Full Implementation Guide →](docs/round2/ROUND2_IMPROVEMENTS.md#6-analytics-dashboard)**
 
 ---
 
@@ -1094,14 +1082,54 @@ gantt
     PDF Reports + Dashboard   :report1, 2025-01-09, 1d
 ```
 
-| Date | Focus Area | Deliverables | Status |
-|------|------------|--------------|--------|
-| **Jan 1-2** | 🔗 Government APIs | PIB API, Bhashini API integration | 🟢 Completed |
-| **Jan 3** | 📊 Database | Expand to 1000+ verified entries | 🟡 In Progress |
-| **Jan 4-5** | 🎥 Video/Audio | Frame analysis, Audio transcription, Deepfake detection | ⚪ Planned |
-| **Jan 6-7** | 🔐 Security | JWT auth, Redis cache, Nginx load balancer | ⚪ Planned |
-| **Jan 8** | 🧠 AI Models | Fine-tuning, Ensemble learning, PDF reports | ⚪ Planned |
-| **Jan 9** | 📊 Final Polish | Dashboard enhancements, Email alerts, Testing | ⚪ Planned |
+<table>
+<thead>
+<tr style="background-color: #E3F2FD;">
+<th><b>Date</b></th>
+<th><b>Focus Area</b></th>
+<th><b>Deliverables</b></th>
+<th><b>Status</b></th>
+</tr>
+</thead>
+<tbody>
+<tr style="background-color: #C8E6C9;">
+<td><b>Jan 1-2</b></td>
+<td>🔗 Government APIs</td>
+<td>PIB API, Bhashini API integration</td>
+<td>🟢 Completed</td>
+</tr>
+<tr style="background-color: #FFF9C4;">
+<td><b>Jan 3</b></td>
+<td>📊 Database</td>
+<td>Expand to 1000+ verified entries</td>
+<td>🟡 In Progress</td>
+</tr>
+<tr style="background-color: #FFE0B2;">
+<td><b>Jan 4-5</b></td>
+<td>🎥 Video/Audio</td>
+<td>Frame analysis, Audio transcription, Deepfake detection</td>
+<td>⚪ Planned</td>
+</tr>
+<tr style="background-color: #F8BBD0;">
+<td><b>Jan 6-7</b></td>
+<td>🔐 Security</td>
+<td>JWT auth, Redis cache, Nginx load balancer</td>
+<td>⚪ Planned</td>
+</tr>
+<tr style="background-color: #E1BEE7;">
+<td><b>Jan 8</b></td>
+<td>🧠 AI Models</td>
+<td>Fine-tuning, Ensemble learning, PDF reports</td>
+<td>⚪ Planned</td>
+</tr>
+<tr style="background-color: #B2DFDB;">
+<td><b>Jan 9</b></td>
+<td>📊 Final Polish</td>
+<td>Dashboard enhancements, Email alerts, Testing</td>
+<td>⚪ Planned</td>
+</tr>
+</tbody>
+</table>
 
 **Total**: 72 hours intensive development | **Team**: 4 members | **Target**: Production-ready by Jan 9 EOD
 
@@ -1117,7 +1145,7 @@ gantt
 <tr>
 <td align="center" width="25%">
 <img src="https://img.shields.io/badge/Team-Lead-FF6B6B?style=for-the-badge" alt="Team Lead"/><br/>
-<b>👨‍💻 Abhishek Giri</b><br/>
+<b>🧑🏻‍💻 Abhishek Giri</b><br/>
 <sub>Full-Stack AI Engineer</sub><br/><br/>
 <b>Core Responsibilities:</b><br/>
 • System Architecture & Design<br/>
@@ -1130,7 +1158,7 @@ gantt
 </td>
 <td align="center" width="25%">
 <img src="https://img.shields.io/badge/Backend-Engineer-4CAF50?style=for-the-badge" alt="Backend Engineer"/><br/>
-<b>👨‍💻 Athrav Gangwar</b><br/>
+<b>🧑🏻‍💻 Athrav Gangwar</b><br/>
 <sub>Backend Specialist</sub><br/><br/>
 <b>Core Responsibilities:</b><br/>
 • Platform Adapter Development<br/>
@@ -1141,7 +1169,7 @@ gantt
 </td>
 <td align="center" width="25%">
 <img src="https://img.shields.io/badge/Frontend-Developer-61DAFB?style=for-the-badge" alt="Frontend Developer"/><br/>
-<b>👩‍💻 Muskan Sharma</b><br/>
+<b>👩🏻‍💻 Muskan Sharma</b><br/>
 <sub>UI/UX Specialist</sub><br/><br/>
 <b>Core Responsibilities:</b><br/>
 • React Component Development<br/>
@@ -1152,7 +1180,7 @@ gantt
 </td>
 <td align="center" width="25%">
 <img src="https://img.shields.io/badge/AI/ML-Specialist-9C27B0?style=for-the-badge" alt="AI/ML Specialist"/><br/>
-<b>👩‍💻 Kashish Sharma</b><br/>
+<b>👩🏻‍💻 Kashish Sharma</b><br/>
 <sub>Machine Learning Engineer</sub><br/><br/>
 <b>Core Responsibilities:</b><br/>
 • AI Model Training & Fine-tuning<br/>
