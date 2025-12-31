@@ -17,7 +17,7 @@ function Navbar({ onSectionChange, currentSection }) {
           <img src={emblem} alt="Government of India" className="govt-logo" />
           <div className="brand-text">
             <span className="brand-name">SATYA-DRISHTI</span>
-            <span className="brand-tagline">Digital Suraksha Framework</span>
+            <span className="brand-tagline">AI-Powered Content Moderation</span>
           </div>
         </div>
         <div className="nav-links">
@@ -28,28 +28,16 @@ function Navbar({ onSectionChange, currentSection }) {
             Home
           </button>
           <button
-            className={activeSection === 'how' ? 'active' : ''}
-            onClick={() => handleNavClick('how')}
+            className={activeSection === 'about' ? 'active' : ''}
+            onClick={() => handleNavClick('about')}
           >
-            How It Works
+            About
           </button>
           <button
             className={activeSection === 'governance' ? 'active' : ''}
             onClick={() => handleNavClick('governance')}
           >
-            🏛️ Governance
-          </button>
-          <button
-            className={activeSection === 'docs' ? 'active' : ''}
-            onClick={() => handleNavClick('docs')}
-          >
-            Documentation
-          </button>
-          <button
-            className={activeSection === 'impact' ? 'active' : ''}
-            onClick={() => handleNavClick('impact')}
-          >
-            Impact
+            Governance
           </button>
           <button
             className={activeSection === 'contact' ? 'active' : ''}

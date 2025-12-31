@@ -1,0 +1,130 @@
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeOut 0.5s ease-in-out 2.5s forwards;
+}
+
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  animation: slideUp 0.8s ease-out;
+}
+
+.loading-gif {
+  width: 600px;
+  height: 450px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.1));
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.loading-title {
+  font-size: 64px;
+  font-weight: 800;
+  color: #1e40af;
+  margin: 0;
+  letter-spacing: 3px;
+  text-align: center;
+  animation: glow 2s ease-in-out infinite;
+}
+
+.loading-subtitle {
+  font-size: 28px;
+  font-weight: 600;
+  color: #64748b;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.loading-spinner {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.spinner-dot {
+  width: 16px;
+  height: 16px;
+  background-color: #1e40af;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3);
+  animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.spinner-dot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.spinner-dot:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: scale(0) translateY(0);
+  }
+  40% {
+    transform: scale(1) translateY(-20px);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 768px) {
+  .loading-gif {
+    width: 400px;
+    height: 300px;
+  }
+  
+  .loading-title {
+    font-size: 40px;
+  }
+  
+  .loading-subtitle {
+    font-size: 20px;
+  }
+}

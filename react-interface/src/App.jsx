@@ -5,15 +5,15 @@ import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
 import ResultCard from './components/ResultCard.jsx';
 import HomeContent from './components/HomeContent.jsx';
-import HowItWorks from './components/HowItWorks.jsx';
-import Docs from './components/Docs.jsx';
+import About from './components/About.jsx';
 import Contact from './components/Contact.jsx';
-import ImpactMonitor from './components/ImpactMonitor.jsx';
 import GovernanceDashboard from './components/GovernanceDashboard.jsx';
+import LoadingScreen from './components/LoadingScreen.jsx';
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8001';
 
 function App() {
+  const [showLoading, setShowLoading] = useState(true);
   const [url, setUrl] = useState('');
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
@@ -122,16 +122,12 @@ function App() {
 
   const renderContent = () => {
     switch(currentSection) {
-      case 'how':
-        return <HowItWorks />;
-      case 'docs':
-        return <Docs />;
-      case 'impact':
-        return <ImpactMonitor />;
-      case 'contact':
-        return <Contact />;
+      case 'about':
+        return <About />;
       case 'governance':
         return <GovernanceDashboard />;
+      case 'contact':
+        return <Contact />;
       default:
         return (
           <>
@@ -392,18 +388,21 @@ function App() {
   };
 
   return (
-    <div className="app">
-      {flash.show && (
-        <div className={`flash-message ${flash.type}`}>
-          {flash.type === 'error' ? 'Error' : 'Success'} {flash.message}
+    <>
+      {showLoading && <LoadingScreen onComplete={() => setShowLoading(false)} />}
+      <div className="app">
+        {flash.show && (
+          <div className={`flash-message ${flash.type}`}>
+            {flash.type === 'error' ? 'Error' : 'Success'} {flash.message}
+          </div>
+        )}
+        <Navbar onSectionChange={setCurrentSection} currentSection={currentSection} />
+        <div className="container">
+          {renderContent()}
         </div>
-      )}
-      <Navbar onSectionChange={setCurrentSection} currentSection={currentSection} />
-      <div className="container">
-        {renderContent()}
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </>
   );
 }
 
