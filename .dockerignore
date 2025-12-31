@@ -1,0 +1,10 @@
+social-intel-agent/venv
+social-intel-agent/__pycache__
+social-intel-agent/**/__pycache__
+social-intel-agent/**/*.pyc
+react-interface/node_modules
+react-interface/build
+.git
+.gitignore
+*.md
+*.sh

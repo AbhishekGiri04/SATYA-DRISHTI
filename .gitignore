@@ -1,0 +1,124 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# PyTorch & AI Models
+*.pth
+*.pt
+*.ckpt
+*.h5
+*.pb
+*.onnx
+models/
+checkpoints/
+cache/
+.cache/
+
+# HuggingFace Cache
+.transformers_cache/
+transformers_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+*.env
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Node.js (React Frontend)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# React Build
+react-interface/build/
+react-interface/dist/
+react-interface/.vite/
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary Files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Large Files
+*.zip
+*.tar.gz
+*.rar
+
+# Secrets & Keys
+*.pem
+*.key
+*.cert
+secrets/
+credentials/
+
+# MongoDB
+*.mongodb
+
+# Backup Files
+*.bak
+*.backup
+*_OLD.*
+*_BACKUP.*
