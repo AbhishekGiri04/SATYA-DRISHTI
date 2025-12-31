@@ -736,6 +736,7 @@ graph TD
 gantt
     title Round 2 Implementation Sprint (9 Days)
     dateFormat  YYYY-MM-DD
+    axisFormat %d
     section Government APIs
     PIB API Integration       :crit, done, api1, 2026-01-01, 2d
     Bhashini Translation      :crit, done, api2, 2026-01-02, 2d
@@ -753,6 +754,7 @@ gantt
     Ensemble Learning        :ai2, 2026-01-09, 1d
     PDF Reports              :report1, 2026-01-09, 1d
     Dashboard Enhancement    :report2, 2026-01-09, 1d
+    todayMarker off
 ```
 
 | Date | Focus Area | Deliverables | Status |
