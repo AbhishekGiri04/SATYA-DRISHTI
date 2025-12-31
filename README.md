@@ -500,144 +500,171 @@ Real-time statistics
 
 ## 🚀 Round 2 Improvements (MANDATORY)
 
-### 🎯 What We Will Add/Improve in Round 2
+> **Timeline**: 2 weeks (Jan 15 - Jan 29, 2025)  
+> **Submission Deadline**: January 15, 2025
 
-#### 1. **Real API Integrations** (High Priority)
-**Current**: Mock PIB database with hardcoded entries  
-**Round 2**: 
-- ✅ Integrate official **PIB Fact-Check API** for real-time verification
-- ✅ Connect to **Bhashini API** for government-approved translation
-- ✅ Expand fake news database from 50 to **1000+ verified entries**
-- ✅ Add **live government portal integration** for source verification
+### 🎯 Planned Enhancements for Round 2
 
-**Impact**: 95%+ accuracy in fake news detection, real-time government data
+#### 1. 🔗 Real API Integrations
+**Current State**: Mock PIB database with 50 hardcoded entries  
+**Round 2 Implementation**:
+- Integrate official **PIB Fact-Check API** for real-time news verification
+- Connect **Bhashini API** for government-approved multilingual translation
+- Expand fake news database to **1000+ verified entries**
+- Add live government portal integration for source credibility checks
 
----
+**Expected Impact**: 95%+ accuracy in fake news detection with real-time government data
 
-#### 2. **Video & Audio Analysis** (High Priority)
-**Current**: Text and image analysis only  
-**Round 2**:
-- ✅ **Deepfake Video Detection** using AI models (detect manipulated videos)
-- ✅ **Audio Speech Analysis** for harmful voice content
-- ✅ **Live Stream Monitoring** for real-time video content
-- ✅ **Subtitle/Caption Analysis** from videos
-
-**Impact**: Complete multi-modal analysis covering all content types
+**Technical Approach**:
+- REST API integration with PIB servers
+- Caching layer for frequently checked sources
+- Fallback mechanism for API downtime
 
 ---
 
-#### 3. **Advanced Security & Scalability** (High Priority)
-**Current**: Basic CORS and validation  
-**Round 2**:
-- ✅ **JWT Authentication** for API access control
-- ✅ **Redis Caching** for 10x faster repeated analysis
-- ✅ **Rate Limiting** with Redis (handle 1M+ requests/day)
-- ✅ **Load Balancing** for horizontal scaling
-- ✅ **WebSocket Support** for real-time updates
+#### 2. 🎥 Video & Audio Analysis
+**Current State**: Text and image analysis only  
+**Round 2 Implementation**:
+- **Deepfake Video Detection** using frame-by-frame analysis
+- **Audio Speech Analysis** for harmful voice content detection
+- **Live Stream Monitoring** for real-time video content
+- **Subtitle/Caption Extraction** and analysis from videos
 
-**Impact**: Production-ready system handling enterprise-scale traffic
+**Expected Impact**: Complete multi-modal analysis covering all content types
 
----
-
-#### 4. **Enhanced AI Models** (Medium Priority)
-**Current**: Pre-trained HuggingFace models  
-**Round 2**:
-- ✅ **Fine-tune models on Indian social media data** (Twitter, Reddit, Instagram)
-- ✅ **Ensemble Learning** combining multiple models for 92%+ accuracy
-- ✅ **Active Learning** from user feedback to improve over time
-- ✅ **Explainable AI** with LIME/SHAP visualizations showing why content was flagged
-
-**Impact**: 92%+ accuracy, transparent AI decisions
+**Technical Approach**:
+- OpenCV for video frame extraction
+- Whisper AI for audio transcription
+- CLIP for video frame analysis
+- Real-time streaming with WebSockets
 
 ---
 
-#### 5. **Professional Reporting** (Medium Priority)
-**Current**: JSON reports only  
-**Round 2**:
-- ✅ **PDF Report Generation** with professional formatting
-- ✅ **Email Notifications** for high-risk content
-- ✅ **Export to CSV/Excel** for bulk analysis
-- ✅ **Automated Evidence Collection** with timestamps and screenshots
+#### 3. 🔐 Advanced Security & Scalability
+**Current State**: Basic CORS and input validation  
+**Round 2 Implementation**:
+- **JWT Authentication** with role-based access control (Admin, Analyst, Viewer)
+- **Redis Caching** for 10x faster repeated analysis
+- **Rate Limiting** to handle 1M+ requests/day
+- **Load Balancing** with Nginx for horizontal scaling
+- **WebSocket Support** for real-time dashboard updates
 
-**Impact**: Court-ready documentation, automated workflows
+**Expected Impact**: Production-ready system handling enterprise-scale traffic
 
----
-
-#### 6. **Advanced Dashboard & Analytics** (Medium Priority)
-**Current**: Basic statistics display  
-**Round 2**:
-- ✅ **Interactive Charts** with Chart.js/D3.js
-- ✅ **Trend Analysis** showing patterns over time
-- ✅ **Threat Heatmap** by region/platform
-- ✅ **Predictive Analytics** forecasting risk trends
-- ✅ **Custom Filters** by date, platform, risk level
-
-**Impact**: Better insights for law enforcement and decision-makers
+**Technical Approach**:
+- JWT tokens with 24-hour expiry
+- Redis for session management and caching
+- Nginx reverse proxy with load balancing
+- Docker containerization for easy deployment
 
 ---
 
-#### 7. **Mobile Application** (Low Priority)
-**Current**: Web-only interface  
-**Round 2**:
-- ✅ **React Native Mobile App** for iOS and Android
-- ✅ **Push Notifications** for critical alerts
-- ✅ **Offline Mode** with sync when online
-- ✅ **Camera Integration** for direct image capture and analysis
+#### 4. 🧠 Enhanced AI Models
+**Current State**: Pre-trained HuggingFace models  
+**Round 2 Implementation**:
+- **Fine-tune models** on 10,000+ Indian social media posts
+- **Ensemble Learning** combining 3 best models for 92%+ accuracy
+- **Active Learning** pipeline to improve from user feedback
+- **Explainable AI** with LIME/SHAP showing why content was flagged
 
-**Impact**: Accessibility for field officers and mobile users
+**Expected Impact**: 92%+ accuracy with transparent AI decisions
 
----
-
-#### 8. **Enterprise Features** (Low Priority)
-**Current**: Single-tenant system  
-**Round 2**:
-- ✅ **Multi-tenant Architecture** for multiple organizations
-- ✅ **Custom Model Training** on organization-specific data
-- ✅ **White-label Solution** with custom branding
-- ✅ **SLA Guarantees** with 99.9% uptime
-
-**Impact**: Enterprise-ready for government agencies and large platforms
+**Technical Approach**:
+- Transfer learning on Indian dataset
+- Weighted voting ensemble
+- Feedback loop for continuous improvement
+- SHAP values for model interpretability
 
 ---
 
-### 📊 Round 2 Comparison Table
+#### 5. 📄 Professional Reporting
+**Current State**: JSON responses only  
+**Round 2 Implementation**:
+- **PDF Report Generation** with charts and evidence screenshots
+- **Email Notifications** for HIGH/CRITICAL risk content
+- **CSV/Excel Export** for bulk analysis
+- **Automated Evidence Collection** with timestamps and metadata
+
+**Expected Impact**: Court-ready documentation with automated workflows
+
+**Technical Approach**:
+- ReportLab for PDF generation
+- SMTP for email notifications
+- Pandas for CSV/Excel export
+- Screenshot capture with Selenium
+
+---
+
+#### 6. 📊 Advanced Dashboard & Analytics
+**Current State**: Basic statistics display  
+**Round 2 Implementation**:
+- **Interactive Charts** with Chart.js showing trends
+- **Threat Heatmap** by region and platform
+- **Predictive Analytics** forecasting risk patterns
+- **Custom Filters** by date range, platform, risk level
+- **Export Reports** in multiple formats
+
+**Expected Impact**: Better insights for law enforcement decision-making
+
+**Technical Approach**:
+- Chart.js for interactive visualizations
+- Time-series analysis for trends
+- Machine learning for predictions
+- Advanced filtering with MongoDB aggregation
+
+---
+
+### 📊 Round 2 Comparison
 
 | Feature | Round 1 (Current) | Round 2 (Planned) | Improvement |
 |---------|-------------------|-------------------|-------------|
-| **API Integration** | Mock PIB data | Real PIB + Bhashini APIs | Real-time govt data |
+| **API Integration** | Mock PIB data | Real PIB + Bhashini | Real-time govt data |
 | **Content Types** | Text + Images | Text + Images + Video + Audio | 4x coverage |
-| **Accuracy** | 87% | 92%+ with fine-tuning | +5% improvement |
-| **Processing Speed** | 10-15 sec | 2-3 sec with Redis cache | 5x faster |
+| **Accuracy** | 87% | 92%+ | +5% improvement |
+| **Processing Speed** | 10-15 sec | 2-3 sec | 5x faster |
 | **Scalability** | Single server | Load balanced + Redis | 100x capacity |
-| **Authentication** | None | JWT + Role-based access | Enterprise security |
+| **Authentication** | None | JWT + RBAC | Enterprise security |
 | **Reports** | JSON only | JSON + PDF + Email | Professional docs |
-| **Mobile Support** | Web only | Web + iOS + Android | Universal access |
-| **AI Explainability** | Confidence scores | LIME/SHAP visualizations | Transparent AI |
-| **Database** | 50 fake news entries | 1000+ verified entries | 20x data |
+| **AI Explainability** | Confidence scores | LIME/SHAP visuals | Transparent AI |
+| **Database** | 50 entries | 1000+ entries | 20x data |
 
 ---
 
-### 🎯 Round 2 Development Timeline
+### 🗓️ 2-Week Development Plan
 
-| Phase | Duration | Features |
-|-------|----------|----------|
-| **Phase 1** | Month 1-2 | Real API integration, Video analysis |
-| **Phase 2** | Month 3-4 | Security, Caching, Load balancing |
-| **Phase 3** | Month 5-6 | Fine-tuned models, Explainable AI |
-| **Phase 4** | Month 7-8 | PDF reports, Email notifications |
-| **Phase 5** | Month 9-10 | Advanced dashboard, Analytics |
-| **Phase 6** | Month 11-12 | Mobile app, Enterprise features |
+| Days | Focus Area | Deliverables |
+|------|------------|--------------|
+| **Day 1-3** | API Integration | PIB API, Bhashini API, Database expansion |
+| **Day 4-6** | Video/Audio Analysis | Deepfake detection, Audio transcription |
+| **Day 7-9** | Security & Scale | JWT auth, Redis caching, Load balancing |
+| **Day 10-12** | AI Enhancement | Model fine-tuning, Ensemble learning |
+| **Day 13-14** | Reporting & Dashboard | PDF generation, Interactive charts |
 
 ---
 
 ### 💡 Why These Improvements Matter
 
-1. **Originality**: Real API integration and video analysis set us apart from competitors
-2. **Efficiency**: Redis caching and load balancing enable enterprise-scale deployment
-3. **Accuracy**: Fine-tuned models on Indian data improve detection by 5%+
-4. **Usability**: PDF reports and mobile app make it accessible to all users
-5. **Transparency**: Explainable AI builds trust with law enforcement
-6. **Scalability**: Multi-tenant architecture enables government-wide deployment
+**For Evaluation Criteria:**
+
+1. **Originality** 🎯
+   - Real API integration (not mock data)
+   - Video deepfake detection (unique feature)
+   - Explainable AI with SHAP (transparency)
+
+2. **Efficiency** ⚡
+   - Redis caching (5x faster)
+   - Load balancing (100x scalability)
+   - Optimized AI pipeline (parallel processing)
+
+3. **Plagiarism-Proof** 🔒
+   - Custom fine-tuned models on Indian data
+   - Original risk scoring algorithm
+   - Unique governance features (Vishwaas Score, IPC/IT Act mapping)
+
+4. **Production-Ready** 🚀
+   - Enterprise security (JWT, RBAC)
+   - Professional reporting (PDF, Email)
+   - Scalable architecture (Docker, Nginx)
 
 ---
 
@@ -646,7 +673,7 @@ Real-time statistics
 <table>
 <tr>
 <td align="center" width="33%">
-<b>👨‍💻 Abhishek Giri</b><br/>
+<b>👨💻 Abhishek Giri</b><br/>
 <sub>Team Lead & Full-Stack AI Engineer</sub><br/>
 • System Architecture<br/>
 • AI Model Integration<br/>
@@ -655,14 +682,14 @@ Real-time statistics
 <a href="https://linkedin.com/in/abhishek-giri04">LinkedIn</a>
 </td>
 <td align="center" width="33%">
-<b>👨‍💻 Athrav</b><br/>
+<b>👨💻 Athrav</b><br/>
 <sub>Backend Engineer</sub><br/>
 • Platform Adapters<br/>
 • Web Scraping<br/>
 • API Development<br/>
 </td>
 <td align="center" width="33%">
-<b>👨‍💻 Kashish</b><br/>
+<b>👨💻 Kashish</b><br/>
 <sub>AI/ML Specialist</sub><br/>
 • AI Model Training<br/>
 • Performance Optimization<br/>
