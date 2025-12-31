@@ -83,115 +83,12 @@ India's digital landscape is growing exponentially with over **700 million inter
 
 ## ✨ Key Features
 
-<div align="center">
-
-### 🎯 Core Capabilities
-
-</div>
-
-<table>
-<tr>
-<td width="50%">
-
-### 🤖 AI-Powered Analysis
-**12 Specialized Models for Comprehensive Detection**
-
-- 🧠 **Multi-Model Intelligence**: Sentiment, Toxicity, Hate Speech, Intent, NSFW detection
-- 🎯 **87% Overall Accuracy**: Across text and image analysis with ensemble learning
-- 🔍 **Deep Context Understanding**: Distinguishes harmful vs informational content
-- 📊 **Real-time Processing**: 10-15 seconds analysis with parallel model execution
-- 🌐 **9 Indian Languages**: Hindi, Bengali, Tamil, Telugu, Marathi, Gujarati, Kannada, Malayalam, Punjabi
-- ⚡ **Continuous Learning**: Active learning pipeline for model improvement
-
-</td>
-<td width="50%">
-
-### 🌐 Multi-Platform Support
-**Universal Content Extraction Across 8+ Platforms**
-
-- 🐦 **Social Media**: Twitter/X, Instagram, Facebook, TikTok, Reddit with 95% success rate
-- 🎥 **Video Platforms**: YouTube metadata, comments, thumbnails extraction
-- 📰 **News & Blogs**: Article scraping with source verification and credibility checks
-- 🔗 **Generic URLs**: Fallback parsing for any web content
-- 📸 **Media Analysis**: Embedded images, videos, and documents
-- 🔄 **Auto-Detection**: Platform identification and adapter selection
-
-</td>
-</tr>
-<tr>
-<td width="50%">
-
-### ⚖️ Legal & Governance
-**Court-Ready Evidence with Government Integration**
-
-- 📊 **Vishwaas Score**: 0-100 credibility rating with PIB Fact-Check integration
-- 🏛️ **Legal Mapping**: Auto-identifies IPC 153A, 295A, IT Act 66A, 67 sections
-- 🔐 **Evidence Chain**: SHA256 hash + timestamps for tamper-proof verification
-- 📋 **Cybercell Reports**: Complete audit trail with court-admissible documentation
-- 🇮🇳 **Government APIs**: Real-time PIB verification and Bhashini translation
-- ✅ **100% Compliance**: Legal framework aligned with Indian cyber laws
-
-</td>
-<td width="50%">
-
-### 🖼️ Advanced Image Analysis
-**Computer Vision with 5 Specialized Models**
-
-- 🔞 **NSFW Detection**: 94% accuracy for nudity and explicit content
-- ⚔️ **Violence Recognition**: Weapons, blood, fighting scenes identification
-- 😡 **Hateful Visuals**: Symbols, gestures, offensive imagery detection
-- 📝 **OCR Extraction**: Text reading from images in 9 Indian languages
-- 🎭 **Meme Analysis**: Context-aware understanding of viral content
-- 📊 **92% Combined Accuracy**: Ensemble of 5 image analysis models
-
-</td>
-</tr>
-<tr>
-<td width="50%">
-
-### 🧠 Context-Aware Intelligence
-**Smart Understanding Beyond Keywords**
-
-- 📰 **News vs Hate**: Distinguishes reporting from endorsing harmful content
-- 🎓 **Educational Context**: Identifies academic and awareness content
-- 🗣️ **Sarcasm Detection**: Understands irony, satire, and figurative language
-- 🌍 **Cultural Sensitivity**: Indian context-aware analysis and interpretation
-- ⚠️ **False Positive Reduction**: 80% fewer incorrect flags (12% vs 60% industry avg)
-- 🔄 **Quote Detection**: Separates quoted content from original statements
-
-</td>
-<td width="50%">
-
-### 📊 Real-Time Dashboard
-**Live Monitoring & Analytics**
-
-- 📈 **Live Statistics**: Real-time analysis count and risk distribution updates
-- 🗺️ **Threat Visualization**: Geographic and platform-wise heatmaps
-- ⚡ **Instant Alerts**: Email notifications for HIGH/CRITICAL threats
-- 🔍 **Advanced Filtering**: Search by date, platform, risk level, content type
-- 📥 **Multi-Format Export**: JSON, CSV, PDF report generation
-- ⏱️ **<200ms Response**: WebSocket-powered real-time updates
-
-</td>
-</tr>
-</table>
-
----
-
-<div align="center">
-
-### 🚀 Performance Highlights
-
-| Feature | Metric | Industry Benchmark |
-|---------|--------|--------------------|
-| **Overall Accuracy** | 87% | 40-50% |
-| **Processing Speed** | 10-15 sec (CPU) | 24-48 hours |
-| **False Positives** | 12% | 60% |
-| **Language Support** | 9 Indian languages | English only |
-| **Platform Coverage** | 8+ platforms | 2-3 platforms |
-| **Legal Compliance** | 100% automated | Manual mapping |
-
-</div>  
+- 🤖 **AI-Powered Analysis**: 12 specialized models with 87% accuracy across sentiment, toxicity, hate speech, intent, and NSFW detection in 9 Indian languages
+- 🌐 **Multi-Platform Support**: Universal content extraction from 8+ platforms (Twitter, Instagram, YouTube, Reddit, TikTok, Facebook, News Sites) with 95% success rate
+- ⚖️ **Legal & Governance**: Court-ready evidence with Vishwaas Score, auto IPC/IT Act mapping, SHA256 hash, and 100% compliance with Indian cyber laws
+- 🖼️ **Advanced Image Analysis**: 5 specialized computer vision models with 92% accuracy for NSFW, violence, hateful visuals, OCR, and meme analysis
+- 🧠 **Context-Aware Intelligence**: Smart understanding that distinguishes news vs hate, detects sarcasm, and reduces false positives by 80% (12% vs 60% industry avg)
+- 📊 **Real-Time Dashboard**: Live monitoring with threat visualization, instant alerts, advanced filtering, multi-format export, and <200ms WebSocket response  
 
 ---
 
@@ -864,7 +761,7 @@ fact_check = api.verify_claim(text="claim to verify")
 vishwaas_score = calculate_credibility(fact_check)
 ```
 
-**📖 [Full Implementation Guide →](docs/round2/ROUND2_IMPROVEMENTS.md#1-real-api-integrations)**
+**📖 [Full Implementation Guide →](docs/round2/ROUND2_IMPROVEMENTS.md#1-government-api-integration)**
 
 ---
 
@@ -910,7 +807,7 @@ vishwaas_score = calculate_credibility(fact_check)
 - Detect deepfakes with 91%+ accuracy
 - Process 30 FPS video in real-time
 
-**📖 [Full Implementation Guide →](docs/round2/ROUND2_IMPROVEMENTS.md#2-video--audio-analysis)**
+**📖 [Full Implementation Guide →](docs/round2/ROUND2_IMPROVEMENTS.md#2-video-audio-analysis)**
 
 ---
 
@@ -948,30 +845,37 @@ vishwaas_score = calculate_credibility(fact_check)
 - **Real-time**: WebSocket for live dashboard updates
 
 **🔧 Architecture:**
+
+<div align="center">
+
+```mermaid
+graph TD
+    A[Nginx Load Balancer<br/>Port 80] --> B[FastAPI Instance 1<br/>Port 8001]
+    A --> C[FastAPI Instance 2<br/>Port 8002]
+    A --> D[FastAPI Instance 3<br/>Port 8003]
+    A --> E[FastAPI Instance 4<br/>Port 8004]
+    
+    B --> F[Redis Cache<br/>Port 6379]
+    C --> F
+    D --> F
+    E --> F
+    
+    style A fill:#FFE0B2,stroke:#000,stroke-width:2px,color:#000
+    style B fill:#E1F5FE,stroke:#000,stroke-width:2px,color:#000
+    style C fill:#E1F5FE,stroke:#000,stroke-width:2px,color:#000
+    style D fill:#E1F5FE,stroke:#000,stroke-width:2px,color:#000
+    style E fill:#E1F5FE,stroke:#000,stroke-width:2px,color:#000
+    style F fill:#FFCDD2,stroke:#000,stroke-width:2px,color:#000
 ```
-┌──────────────┐
-│   Nginx      │ ← Load Balancer
-│ (Port 80)    │
-└──────┬───────┘
-       │
-   ┌───┴────┬────────┬────────┐
-   ▼        ▼        ▼        ▼
-[API-1]  [API-2]  [API-3]  [API-4]  ← FastAPI Instances
-   │        │        │        │
-   └────────┴────────┴────────┘
-            │
-      ┌─────┴─────┐
-      │   Redis   │ ← Cache Layer
-      │  (Cache)  │
-      └───────────┘
-```
+
+</div>
 
 **📊 Performance Gains:**
 - **Processing**: 10-15s → 2-3s (5x faster)
 - **Capacity**: 20 req/min → 1M+ req/day (100x scalability)
 - **Uptime**: 95% → 99.9% (enterprise-grade)
 
-**📖 [Full Implementation Guide →](docs/round2/ROUND2_IMPROVEMENTS.md#3-enterprise-security--scalability)**
+**📖 [Full Implementation Guide →](docs/round2/ROUND2_IMPROVEMENTS.md#3-security-scalability)**
 
 ---
 
@@ -1094,7 +998,7 @@ final_prediction = (
 [Charts, Screenshots, Timeline]
 ```
 
-**📖 [Full Implementation Guide →](docs/round2/ROUND2_IMPROVEMENTS.md#5-professional-reporting-system)**
+**📖 [Full Implementation Guide →](docs/round2/ROUND2_IMPROVEMENTS.md#5-reporting-system)**
 
 ---
 
@@ -1138,7 +1042,7 @@ final_prediction = (
 - 📱 **Platform analysis**: Twitter vs Reddit vs Instagram threats
 - 🔮 **Predictions**: ML-based risk forecasting
 
-**📖 [Full Implementation Guide →](docs/round2/ROUND2_IMPROVEMENTS.md#6-advanced-analytics-dashboard)**
+**📖 [Full Implementation Guide →](docs/round2/ROUND2_IMPROVEMENTS.md#6-analytics-dashboard)**
 
 ---
 
@@ -1291,8 +1195,6 @@ gantt
 
 ### 🇮🇳 Built with ❤️ for Digital India
 
-<img src="https://img.shields.io/badge/Made%20in-India-FF9933?style=for-the-badge&labelColor=138808&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiIGZpbGw9IiMwMDAwODAiLz4KPC9zdmc+" alt="Made in India"/>
-
 **SATYA-DRISHTI** - AI-Powered Content Moderation for Digital India
 
 *Empowering law enforcement and citizens with intelligent threat detection and court-ready evidence generation*
@@ -1305,6 +1207,6 @@ gantt
 
 **© 2025 Team Code Catalyst | Smart India Hackathon 2024**
 
-*Developed for Ministry of Electronics & Information Technology (MeitY)*
+*Developed for NITI Aayog, Government of India*
 
 </div>
