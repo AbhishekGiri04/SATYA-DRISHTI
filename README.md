@@ -765,7 +765,7 @@ nano .env  # Edit MongoDB URI and other settings
 **Environment Variables (.env)**
 ```env
 # MongoDB Configuration
-MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/satya_drishti
+MONGODB_URI=mongodb://localhost:27017/satya_drishti
 
 # Server Configuration
 PORT=8001
