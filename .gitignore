@@ -125,3 +125,5 @@ config/secrets.py
 *.backup
 *_OLD.*
 *_BACKUP.*
+.env
+social-intel-agent/.env
