@@ -1066,19 +1066,19 @@ gantt
     title Round 2 Implementation Sprint (9 Days)
     dateFormat  YYYY-MM-DD
     section APIs
-    PIB API Integration       :crit, done, api1, 2025-01-01, 2d
-    Bhashini Translation      :crit, done, api2, 2025-01-02, 2d
-    Database 1000+ entries    :active, api3, 2025-01-03, 1d
+    PIB API Integration       :crit, done, api1, 2026-01-01, 2d
+    Bhashini Translation      :crit, done, api2, 2026-01-02, 2d
+    Database 1000+ entries    :active, api3, 2026-01-03, 1d
     section Video/Audio
-    Video Frame Analysis      :video1, 2025-01-04, 1d
-    Audio Transcription       :video2, 2025-01-05, 1d
-    Deepfake Detection        :video3, 2025-01-06, 1d
+    Video Frame Analysis      :video1, 2026-01-04, 1d
+    Audio Transcription       :video2, 2026-01-05, 1d
+    Deepfake Detection        :video3, 2026-01-06, 1d
     section Security
-    JWT + Redis Cache         :sec1, 2025-01-07, 1d
-    Nginx Load Balancer       :sec2, 2025-01-08, 1d
+    JWT + Redis Cache         :sec1, 2026-01-07, 1d
+    Nginx Load Balancer       :sec2, 2026-01-08, 1d
     section AI
-    Model Fine-tuning         :ai1, 2025-01-08, 1d
-    PDF + Dashboard           :report1, 2025-01-09, 1d
+    Model Fine-tuning         :ai1, 2026-01-08, 1d
+    PDF + Dashboard           :report1, 2026-01-09, 1d
 ```
 
 <table>
