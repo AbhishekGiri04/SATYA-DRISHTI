@@ -128,6 +128,7 @@ SATYA-DRISHTI/
 │   ├── 📄 Analyzing-Content.png     # 🖼️ Analysis in progress
 │   └── 📄 Result.png                # 🖼️ Analysis results
 ├── 📄 README.md                     # 📖 Project documentation
+├── 📄 LICENSE                       # ⚖️ MIT License
 ├── 📄 .env.example                  # 🔧 Environment template
 ├── 📄 .gitignore                    # 🚫 Git ignore patterns
 ├── 📄 Dockerfile                    # 🐳 Docker configuration
@@ -1261,6 +1262,12 @@ gantt
 <img src="https://img.shields.io/badge/Email-Contact-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
 </a>
 </p>
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
