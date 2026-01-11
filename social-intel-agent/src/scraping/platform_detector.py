@@ -1,7 +1,7 @@
 from urllib.parse import urlparse
 from typing import Literal
 
-PlatformType = Literal["twitter", "reddit", "youtube", "instagram", "tiktok", "facebook", "news", "generic"]
+PlatformType = Literal["twitter", "reddit", "youtube", "instagram", "tiktok", "facebook", "linkedin", "telegram", "discord", "snapchat", "pinterest", "tumblr", "news", "generic"]
 
 class PlatformDetector:
     """Detects which platform a URL belongs to"""
@@ -13,6 +13,12 @@ class PlatformDetector:
         "instagram": ["instagram.com"],
         "tiktok": ["tiktok.com"],
         "facebook": ["facebook.com", "fb.com"],
+        "linkedin": ["linkedin.com"],
+        "telegram": ["t.me", "telegram.me"],
+        "discord": ["discord.com", "discord.gg"],
+        "snapchat": ["snapchat.com"],
+        "pinterest": ["pinterest.com"],
+        "tumblr": ["tumblr.com"],
     }
     
     NEWS_DOMAINS = [

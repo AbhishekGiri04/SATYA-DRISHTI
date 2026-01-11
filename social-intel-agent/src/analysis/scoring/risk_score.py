@@ -3,34 +3,19 @@ class RiskScorer:
         risk_factors = []
         reasons = []
         
-        # Get scores (only if actually detected)
+        # Enhanced weighted scoring with sentiment
         toxicity_score = content.get("toxicity", {}).get("confidence", 0) if content.get("toxicity", {}).get("is_toxic") else 0
         hate_score = content.get("hate_speech", {}).get("confidence", 0) if content.get("hate_speech", {}).get("is_hate_speech") else 0
-        
-        # If both are 0, it's safe content
-        if toxicity_score == 0 and hate_score == 0:
-            return {
-                "score": 0,
-                "level": "SAFE",
-                "factors": [],
-                "reasons": ["No harmful content detected"]
-            }
-        
         sentiment = content.get("sentiment", {}).get("label", "NEUTRAL")
         sentiment_score = content.get("sentiment", {}).get("score", 0)
         
-        # Intent detection
+        # Intent detection - critical for reducing false positives
         intent = content.get("intent", {}).get("intent", "unknown")
         intent_confidence = content.get("intent", {}).get("confidence", 0)
         
-        # Base risk calculation
-        base_risk = (0.4 * toxicity_score + 0.4 * hate_score) * 100
-        
-        # Add toxicity/hate to factors only if significant
-        if toxicity_score > 0.5:
-            risk_factors.append("toxicity")
-        if hate_score > 0.5:
-            risk_factors.append("hate_speech")
+        # Base risk calculation with sentiment weight
+        sentiment_multiplier = 1.2 if sentiment == "NEGATIVE" and sentiment_score > 0.8 else 1.0
+        base_risk = (0.35 * toxicity_score + 0.45 * hate_score + 0.2 * (1 if sentiment == "NEGATIVE" else 0)) * 100 * sentiment_multiplier
         
         # Category analysis with fine-grained detection
         categories = content.get("content_categories", {})
@@ -102,6 +87,29 @@ class RiskScorer:
             base_risk += 25
             risk_factors.append("explicit_content")
             reasons.append("Explicit adult or sexual content detected")
+        
+        # Misinformation detection
+        misinformation = content.get("misinformation", {})
+        if misinformation.get("is_misinformation") and misinformation.get("confidence", 0) > 0.5:
+            base_risk += 30
+            risk_factors.append("misinformation")
+            reasons.append("Potential misinformation detected")
+        
+        # Social media patterns
+        social_analysis = content.get("social_analysis", {})
+        social_patterns = social_analysis.get("social_patterns", [])
+        engagement_intent = social_analysis.get("engagement_intent", "normal")
+        
+        for pattern in social_patterns:
+            if pattern["pattern"] in ["clickbait", "engagement bait"]:
+                base_risk += 10 * pattern["confidence"]
+                risk_factors.append("engagement_manipulation")
+            elif pattern["pattern"] in ["misinformation", "conspiracy theory", "fake news"]:
+                base_risk += 25 * pattern["confidence"]
+                risk_factors.append("misinformation_patterns")
+            elif pattern["pattern"] in ["scam", "spam"]:
+                base_risk += 20 * pattern["confidence"]
+                risk_factors.append("scam_content")
         
         # Intent-based adjustment - KEY IMPROVEMENT
         # Skip intent reduction for NSFW content

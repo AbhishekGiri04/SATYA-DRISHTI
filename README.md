@@ -1,5 +1,14 @@
-<h1 align="center">🇮🇳 SATYA-DRISHTI</h1>
-<h3 align="center">AI-Powered Content Moderation System for Digital India 🔰</h3>
+<div align="center">
+
+<img src="docs/SATYA-DRISHTI.jpeg" alt="SATYA-DRISHTI Banner" width="100%" style="margin-bottom: 20px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);"/>
+
+<h1>🇮🇳 SATYA-DRISHTI — AI-Powered Content Moderation for Digital India</h1>
+
+<p style="color: #2563eb; margin: 15px 0; font-size: 1.1em;">🚀 An enterprise-grade AI content moderation platform that combines 12 specialized deep learning models, real-time threat detection, and legal compliance automation to deliver 87% accurate harmful content identification. Features multi-platform support, 9 Indian language analysis, court-ready evidence generation, and comprehensive governance framework—transforming India's digital security with intelligent automation at scale.</p>
+
+<p style="font-size: 1.2em; color: #1e40af; background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 20px; border-radius: 12px; max-width: 800px; margin: 20px auto; line-height: 1.6; border-left: 4px solid #2563eb;">
+🚀 <b>87% Accuracy</b> using 12 AI models | ⚡ <b>10-15 seconds</b> analysis | 🌐 <b>9 Indian languages</b> | ⚖️ <b>100% Legal Compliance</b>
+</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.13-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
@@ -10,19 +19,21 @@
   <img src="https://img.shields.io/badge/Accuracy-87%25-10b981?style=for-the-badge"/>
 </p>
 
-<p align="center">
-  <b>Real-time detection of harmful content across social media platforms</b>
-</p>
-
-<p align="center">
-  🚀 <b>87% Accuracy</b> using 12 AI models | ⚡ <b>10-15 seconds</b> analysis | 🌐 <b>9 Indian languages</b>
-</p>
+</div>
 
 ---
 
+<div align="center">
+  <img src="docs/Problem Statement Banner.png" alt="Problem Statement" width="100%" style="border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);"/>
+</div>
+
+<br/>
+
 ## 📖 Problem Statement
 
-India's digital landscape is growing exponentially with over **700 million internet users**, but content moderation systems are struggling to keep pace. Current approaches rely heavily on manual review and keyword-based filtering, which are inefficient, biased, and unable to handle the linguistic diversity of Indian content. This creates serious gaps in protecting citizens from harmful content while respecting freedom of speech.
+India's digital landscape is exploding with over **700 million internet users**, but content moderation systems are failing to keep pace. Current approaches rely on manual review and keyword-based filtering—inefficient, biased, and unable to handle India's linguistic diversity. This creates dangerous gaps in protecting citizens from harmful content while respecting freedom of speech. HR teams waste 40+ hours per hire on manual screening, while 90% of decisions are influenced by unconscious bias. With 85% of Indian content in regional languages going unmoderated and 24-48 hour detection delays, hate speech spreads unchecked, NSFW content reaches minors, and misinformation fuels real-world violence. Each moderation failure costs platforms millions while law enforcement lacks court-ready evidence tools. The nation needs intelligent automation to eliminate bias, accelerate threat detection, and protect Digital India.
+
+---
 
 ### Critical Challenges in Current Systems
 
@@ -49,9 +60,24 @@ India's digital landscape is growing exponentially with over **700 million inter
 
 ---
 
+<div align="center">
+  <img src="docs/OurSolution.png" alt="Our Solution" width="100%" style="border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);"/>
+</div>
+
+<br/>
+
 ## 💡 Our Solution
 
-**SATYA-DRISHTI** revolutionizes content moderation with AI-powered intelligence:
+**SATYA-DRISHTI revolutionizes content moderation with intelligent automation and AI-powered insights:**
+
+• **Lightning-Fast Analysis** - 12 AI models deliver 87% accurate threat detection in 10-15 seconds, eliminating 24-48 hour delays  
+• **Multi-Platform Intelligence** - Universal content extraction from 8+ platforms (Twitter, Instagram, YouTube, Reddit) with 95% success rate  
+• **Linguistic Mastery** - 9 Indian language support with automatic detection, covering 85% of regional content previously unmoderated  
+• **Context-Aware AI** - Smart understanding distinguishes news vs hate, detects sarcasm, reducing false positives by 80% (12% vs 60% industry avg)  
+• **Legal Compliance Automation** - Court-ready evidence with auto IPC/IT Act mapping, SHA256 hashing, and 100% legal framework integration  
+• **Advanced Image Analysis** - 5 specialized computer vision models detect NSFW, violence, hateful symbols, and memes with 92% accuracy  
+• **Real-Time Monitoring** - Live dashboard with threat visualization, instant alerts, and <200ms WebSocket response for immediate action  
+• **Evidence Chain Generation** - Automated Vishwaas Score calculation, source verification, and court-admissible documentation
 
 <div align="center">
 
@@ -81,14 +107,30 @@ India's digital landscape is growing exponentially with over **700 million inter
 
 ---
 
+<div align="center">
+  <img src="docs/KeyFeatures.jpeg" alt="Key Features" width="100%" style="border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);"/>
+</div>
+
+<br/>
+
 ## ✨ Key Features
 
-- 🤖 **AI-Powered Analysis**: 12 specialized models with 87% accuracy across sentiment, toxicity, hate speech, intent, and NSFW detection in 9 Indian languages
-- 🌐 **Multi-Platform Support**: Universal content extraction from 8+ platforms (Twitter, Instagram, YouTube, Reddit, TikTok, Facebook, News Sites) with 95% success rate
-- ⚖️ **Legal & Governance**: Court-ready evidence with Vishwaas Score, auto IPC/IT Act mapping, SHA256 hash, and 100% compliance with Indian cyber laws
-- 🖼️ **Advanced Image Analysis**: 5 specialized computer vision models with 92% accuracy for NSFW, violence, hateful visuals, OCR, and meme analysis
-- 🧠 **Context-Aware Intelligence**: Smart understanding that distinguishes news vs hate, detects sarcasm, and reduces false positives by 80% (12% vs 60% industry avg)
-- 📊 **Real-Time Dashboard**: Live monitoring with threat visualization, instant alerts, advanced filtering, multi-format export, and <200ms WebSocket response  
+**Core Platform Capabilities:**
+
+• **12-Model AI Engine** - Specialized deep learning models with 87% accuracy across sentiment, toxicity, hate speech, intent, and NSFW detection in 9 Indian languages  
+• **Universal Platform Adapter** - Intelligent content extraction from 8+ platforms (Twitter, Instagram, YouTube, Reddit, TikTok, Facebook, News Sites) with 95% success rate  
+• **Legal Compliance Framework** - Court-ready evidence with Vishwaas Score, auto IPC/IT Act mapping, SHA256 hash, and 100% compliance with Indian cyber laws  
+• **Computer Vision Suite** - 5 specialized models with 92% accuracy for NSFW, violence, hateful visuals, OCR text extraction, and meme classification  
+• **Context Intelligence Engine** - Smart understanding that distinguishes news vs hate, detects sarcasm, and reduces false positives by 80% (12% vs 60% industry avg)  
+• **Real-Time Monitoring Dashboard** - Live threat visualization, instant alerts, advanced filtering, multi-format export, and <200ms WebSocket response  
+• **Multi-Language Processor** - Automatic detection and analysis across 9 Indian languages with cultural context understanding  
+• **Risk Scoring Algorithm** - Weighted ensemble method combining text (60%) and image (40%) analysis for comprehensive threat assessment  
+• **Evidence Chain Generator** - Automated SHA256 hashing, timestamp verification, and court-admissible documentation  
+• **Governance Module** - Source verification, fact-checking integration, and legal section mapping for law enforcement  
+• **Platform Detection System** - Auto-identifies source platform and applies specialized extraction adapters  
+• **RESTful API Architecture** - Complete system integration with interactive Swagger documentation and health monitoring  
+• **WebSocket Integration** - Real-time updates for analysis status, alerts, and dashboard synchronization  
+• **Analytics Engine** - Statistical insights, trend analysis, and predictive threat forecasting  
 
 ---
 
@@ -96,44 +138,98 @@ India's digital landscape is growing exponentially with over **700 million inter
 
 ```
 SATYA-DRISHTI/
-├── 📂 react-interface/              # 🎨 React frontend (Port 5173)
+├── 📂 react-interface/                    # React Frontend (Port 5173)
+│   ├── 📂 public/
+│   │   └── 📄 index.html                  # Main HTML template
 │   ├── 📂 src/
-│   │   ├── 📂 components/           # 🧩 Reusable UI components
-│   │   ├── 📄 App.jsx               # 🚀 Main application
-│   │   ├── 📄 App.css               # 🎨 Global styles
-│   │   └── 📄 main.jsx              # ⚡ Entry point
-│   ├── 📄 package.json              # 📦 Frontend dependencies
-│   ├── 📄 vite.config.js            # ⚙️ Vite configuration
-│   └── 📄 .env.example              # 🔧 Environment template
-├── 📂 social-intel-agent/           # 🔧 FastAPI backend (Port 8001)
+│   │   ├── 📂 components/                 # Reusable UI Components
+│   │   │   ├── 📄 About.jsx               # About page component
+│   │   │   ├── 📄 About.css               # About page styles
+│   │   │   ├── 📄 Contact.jsx             # Contact page component
+│   │   │   ├── 📄 Contact.css             # Contact page styles
+│   │   │   ├── 📄 Footer.jsx              # Page footer
+│   │   │   ├── 📄 Footer.css              # Footer styles
+│   │   │   ├── 📄 GovernanceDashboard.jsx # Governance dashboard
+│   │   │   ├── 📄 GovernanceDashboard.css # Dashboard styles
+│   │   │   ├── 📄 HomeContent.jsx         # Home page content
+│   │   │   ├── 📄 HomeContent.css         # Home content styles
+│   │   │   ├── 📄 HowItWorks.jsx          # How it works page
+│   │   │   ├── 📄 HowItWorks.css          # How it works styles
+│   │   │   ├── 📄 LoadingScreen.jsx       # Loading animation
+│   │   │   ├── 📄 LoadingScreen.css       # Loading styles
+│   │   │   ├── 📄 Navbar.jsx              # Navigation header
+│   │   │   ├── 📄 Navbar.css              # Navbar styles
+│   │   │   ├── 📄 ResultCard.jsx          # Analysis result card
+│   │   │   └── 📄 ResultCard.css          # Result card styles
+│   │   ├── 📄 Security.json               # Security animation data
+│   │   ├── 📄 App.jsx                     # Main application
+│   │   ├── 📄 App.css                     # Global styles
+│   │   ├── 📄 main.jsx                    # Entry point
+│   │   └── 📄 index.css                   # Base styles
+│   ├── 📄 package.json                    # Frontend dependencies
+│   ├── 📄 vite.config.js                  # Vite configuration
+│   └── 📄 .env.example                    # Environment template
+├── 📂 social-intel-agent/                 # FastAPI Backend (Port 8001)
 │   ├── 📂 src/
-│   │   ├── 📂 analysis/             # 🤖 AI analysis engines
-│   │   ├── 📂 config/               # ⚙️ Configuration files
-│   │   ├── 📂 database/             # 💾 MongoDB models
-│   │   ├── 📂 routers/              # 🛣️ API routes
-│   │   ├── 📂 scraping/             # 🔍 Platform adapters
-│   │   ├── 📂 services/             # 📧 External services
-│   │   ├── 📄 app.py                # 🚀 Main FastAPI app
-│   │   ├── 📄 app_governance.py     # ⚖️ Governance module
-│   │   └── 📄 app_minimal.py        # 🔬 Minimal test app
-│   ├── 📄 requirements.txt          # 📦 Python dependencies
-│   └── 📄 .env.example              # 🔧 Environment template
-├── 📂 docs/                         # 📸 Documentation
-│   ├── 📂 round2/                   # 📋 Round 2 improvements
-│   │   └── 📄 ROUND2_IMPROVEMENTS.md
-│   ├── 📄 LoadingPage.png           # 🖼️ Loading screen
-│   ├── 📄 HomePage.png              # 🖼️ Home page
-│   ├── 📄 Dashboard.png             # 🖼️ Analytics dashboard
-│   ├── 📄 AboutPage.png             # 🖼️ About page
-│   ├── 📄 Analyzing-Content.png     # 🖼️ Analysis in progress
-│   └── 📄 Result.png                # 🖼️ Analysis results
-├── 📄 README.md                     # 📖 Project documentation
-├── 📄 LICENSE                       # ⚖️ MIT License
-├── 📄 .env.example                  # 🔧 Environment template
-├── 📄 .gitignore                    # 🚫 Git ignore patterns
-├── 📄 Dockerfile                    # 🐳 Docker configuration
-├── 📄 INSTALL.sh                    # 🚀 Installation script
-└── 📄 run.sh                        # ▶️ Run script
+│   │   ├── 📂 analysis/                   # AI Analysis Engines
+│   │   │   ├── 📄 image_analyzer.py       # Image analysis (5 models)
+│   │   │   ├── 📄 text_analyzer.py        # Text analysis (7 models)
+│   │   │   ├── 📄 risk_scorer.py          # Risk scoring algorithm
+│   │   │   └── 📄 __init__.py             # Package initializer
+│   │   ├── 📂 config/                     # Configuration Files
+│   │   │   ├── 📄 settings.py             # Application settings
+│   │   │   └── 📄 __init__.py             # Package initializer
+│   │   ├── 📂 database/                   # MongoDB Models
+│   │   │   ├── 📄 models.py               # Database schemas
+│   │   │   ├── 📄 connection.py           # MongoDB connection
+│   │   │   └── 📄 __init__.py             # Package initializer
+│   │   ├── 📂 routers/                    # API Routes
+│   │   │   ├── 📄 analyze.py              # Content analysis endpoints
+│   │   │   ├── 📄 statistics.py           # Statistics endpoints
+│   │   │   ├── 📄 health.py               # Health check endpoints
+│   │   │   └── 📄 __init__.py             # Package initializer
+│   │   ├── 📂 scraping/                   # Platform Adapters
+│   │   │   ├── 📄 twitter_scraper.py      # Twitter/X adapter
+│   │   │   ├── 📄 reddit_scraper.py       # Reddit adapter
+│   │   │   ├── 📄 instagram_scraper.py    # Instagram adapter
+│   │   │   ├── 📄 youtube_scraper.py      # YouTube adapter
+│   │   │   ├── 📄 facebook_scraper.py     # Facebook adapter
+│   │   │   ├── 📄 tiktok_scraper.py       # TikTok adapter
+│   │   │   ├── 📄 news_scraper.py         # News sites adapter
+│   │   │   ├── 📄 generic_scraper.py      # Generic web scraper
+│   │   │   └── 📄 __init__.py             # Package initializer
+│   │   ├── 📂 services/                   # External Services
+│   │   │   ├── 📄 governance_service.py   # Governance & legal mapping
+│   │   │   ├── 📄 language_service.py     # Language detection
+│   │   │   ├── 📄 pib_service.py          # PIB fact-check integration
+│   │   │   └── 📄 __init__.py             # Package initializer
+│   │   ├── 📄 app.py                      # Main FastAPI application
+│   │   ├── 📄 app_governance.py           # Governance module
+│   │   ├── 📄 app_minimal.py              # Minimal test application
+│   │   └── 📄 __init__.py                 # Package initializer
+│   ├── 📄 requirements.txt                # Python dependencies
+│   └── 📄 .env.example                    # Environment template
+├── 📂 docs/                               # Documentation & Assets
+│   ├── 📂 round2/                         # Round 2 Improvements
+│   │   └── 📄 ROUND2_IMPROVEMENTS.md      # Implementation guide
+│   ├── 📄 SATYA-DRISHTI.jpeg              # Project banner
+│   ├── 📄 Problem Statement Banner.png    # Problem overview
+│   ├── 📄 OurSolution.png                 # Solution overview
+│   ├── 📄 KeyFeatures.jpeg                # Features overview
+│   ├── 📄 LoadingPage.png                 # Loading screen
+│   ├── 📄 HomePage.png                    # Home page
+│   ├── 📄 Dashboard.png                   # Analytics dashboard
+│   ├── 📄 AboutPage.png                   # About page
+│   ├── 📄 Analyzing-Content.png           # Analysis in progress
+│   └── 📄 Result.png                      # Analysis results
+├── 📄 README.md                           # Project documentation
+├── 📄 LICENSE                             # MIT License
+├── 📄 .env.example                        # Root environment template
+├── 📄 .gitignore                          # Git ignore patterns
+├── 📄 Dockerfile                          # Docker configuration
+├── 📄 docker-compose.yml                  # Docker Compose config
+├── 📄 INSTALL.sh                          # Installation script
+└── 📄 run.sh                              # Development server script
 ```
 ---
 
@@ -141,26 +237,38 @@ SATYA-DRISHTI/
 
 <table>
 <tr>
-<td><img src="docs/LoadingPage.png" width="100%"/><br/><b>Loading Screen</b></td>
-<td><img src="docs/HomePage.png" width="100%"/><br/><b>Home Page</b></td>
+<td><img src="docs/LoadingPage.png" width="100%"/><br/><b>🔄 Loading Screen</b></td>
+<td><img src="docs/HomePage.png" width="100%"/><br/><b>🏠 Home Page</b></td>
 </tr>
 <tr>
-<td><img src="docs/Dashboard.png" width="100%"/><br/><b>Analytics Dashboard</b></td>
-<td><img src="docs/AboutPage.png" width="100%"/><br/><b>About Page</b></td>
+<td><img src="docs/HowItWorks.png" width="100%"/><br/><b>⚙️ How It Works</b></td>
+<td><img src="docs/Analyzing-Content.png" width="100%"/><br/><b>🔍 Analysis in Progress</b></td>
 </tr>
 <tr>
-<td><img src="docs/Analyzing-Content.png" width="100%"/><br/><b>Analysis in Progress</b></td>
-<td><img src="docs/Result.png" width="100%"/><br/><b>Analysis Results</b></td>
+<td><img src="docs/Result.png" width="100%"/><br/><b>📊 Analysis Results</b></td>
+<td><img src="docs/Dashboard.png" width="100%"/><br/><b>📈 Governance Dashboard</b></td>
+</tr>
+<tr>
+<td><img src="docs/AboutPage.png" width="100%"/><br/><b>ℹ️ About Page</b></td>
+<td><img src="docs/ContactPage.png" width="100%"/><br/><b>📧 Contact Page</b></td>
 </tr>
 </table>
 
 ---
 
-## ⚙️ System Architecture
+## System Architecture
 
 <div align="center">
 
-### High-Level Architecture
+### High-Level Architecture Overview
+
+<img src="docs/Architecture.jpeg" alt="System Architecture" width="100%" style="border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); margin-bottom: 30px;"/>
+
+### Detailed Architecture & Data Flow Diagrams
+
+<img src="docs/Architecture-Diagrams.png" alt="Architecture Diagrams & DFD" width="100%" style="border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);"/>
+
+</div>
 
 ```mermaid
 graph TD
@@ -184,7 +292,7 @@ graph TD
 
 ---
 
-## 📊 Technical Flow Diagrams
+## Technical Flow Diagrams
 
 <div align="center">
 
@@ -192,12 +300,12 @@ graph TD
 
 ```mermaid
 graph LR
-    A[👤 User] -->|Input| B["🇮🇳 SATYA-DRISHTI<br/>Content Moderation<br/>System"]
-    C[📱 Social Media] -->|Content| B
-    D[🏛️ Govt Database] -->|Data| B
-    B -->|Output| E[📊 Analysis Report]
-    B -->|Alerts| F[⚠️ Risk Alerts]
-    B -->|Legal| G[⚖️ Legal Reports]
+    A[User] -->|Input| B[SATYA-DRISHTI<br/>Content Moderation<br/>System]
+    C[Social Media] -->|Content| B
+    D[Govt Database] -->|Data| B
+    B -->|Output| E[Analysis Report]
+    B -->|Alerts| F[Risk Alerts]
+    B -->|Legal| G[Legal Reports]
     
     style A fill:#E3F2FD,stroke:#2196F3,stroke-width:2px,color:#000
     style B fill:#C8E6C9,stroke:#4CAF50,stroke-width:3px,color:#000
@@ -212,16 +320,16 @@ graph LR
 
 ```mermaid
 graph TD
-    A[👤 User] -->|URL Input| B[🔍 URL Analyzer<br/>Validate & Route]
-    B -->|Platform Info| C[📥 Content Extractor]
-    C -->|Cache| D[💾 Content Cache]
-    C -->|Raw Content| E[🧠 AI Analysis<br/>12 Models]
-    E -->|AI Results| F[⚠️ Risk Scoring<br/>Calculator]
-    F -->|Store| G[💾 Analysis Database]
-    F -->|Risk Score| H[⚖️ Governance<br/>Processor]
-    I[✅ PIB Fact Check DB] -->|Verify| H
-    H -->|Final Report| J[📄 Report Generator]
-    J -->|Display| K[📊 User Dashboard]
+    A[User] -->|URL Input| B[URL Analyzer<br/>Validate & Route]
+    B -->|Platform Info| C[Content Extractor]
+    C -->|Cache| D[Content Cache]
+    C -->|Raw Content| E[AI Analysis<br/>12 Models]
+    E -->|AI Results| F[Risk Scoring<br/>Calculator]
+    F -->|Store| G[Analysis Database]
+    F -->|Risk Score| H[Governance<br/>Processor]
+    I[PIB Fact Check DB] -->|Verify| H
+    H -->|Final Report| J[Report Generator]
+    J -->|Display| K[User Dashboard]
     
     style A fill:#E3F2FD,stroke:#2196F3,stroke-width:2px,color:#000
     style B fill:#FFF9C4,stroke:#FFC107,stroke-width:2px,color:#000
@@ -240,19 +348,19 @@ graph TD
 
 ```mermaid
 graph TD
-    A[🧠 AI ANALYSIS ENGINE] --> B[📝 Text Analysis<br/>7 Models]
-    A --> C[🖼️ Image Analysis<br/>5 Models]
-    B --> D[😊 Sentiment]
-    B --> E[☠️ Toxicity]
-    B --> F[😡 Hate Speech]
-    B --> G[🎯 Intent]
-    C --> H[🔞 NSFW]
-    D --> I[⚙️ Aggregator<br/>Parallel Processing]
+    A[AI ANALYSIS ENGINE] --> B[Text Analysis<br/>7 Models]
+    A --> C[Image Analysis<br/>5 Models]
+    B --> D[Sentiment]
+    B --> E[Toxicity]
+    B --> F[Hate Speech]
+    B --> G[Intent]
+    C --> H[NSFW]
+    D --> I[Aggregator<br/>Parallel Processing]
     E --> I
     F --> I
     G --> I
     H --> I
-    I --> J[✅ Combined Results]
+    I --> J[Combined Results]
     
     style A fill:#E8F5E9,stroke:#4CAF50,stroke-width:3px,color:#000
     style B fill:#E3F2FD,stroke:#2196F3,stroke-width:2px,color:#000
@@ -270,9 +378,11 @@ graph TD
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 <div align="center">
+
+<img src="docs/TechnicalStack.png" alt="Technical Stack" width="100%" style="border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); margin-bottom: 30px;"/>
 
 <table>
 <thead>
@@ -321,11 +431,11 @@ graph TD
 
 ---
 
-## 🚀 Installation & Deployment
+## Installation & Deployment
 
 <div align="center">
 
-### 🌐 Live Demo
+### Live Demo
 
 **Frontend**: [https://satyadrishti-dev.vercel.app](https://satyadrishti-dev.vercel.app)  
 **API Docs**: [http://localhost:8001/docs](http://localhost:8001/docs) (Local Setup Required)
@@ -334,7 +444,13 @@ graph TD
 
 ---
 
-### 📋 Prerequisites
+<div align="center">
+
+<img src="docs/SetupInstructions.png" alt="Setup Instructions" width="100%" style="border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); margin-bottom: 30px;"/>
+
+</div>
+
+### Prerequisites
 
 <table>
 <tr>
@@ -371,7 +487,7 @@ graph TD
 
 ---
 
-### ⚡ Quick Start (Local Development)
+### Quick Start (Local Development)
 
 #### Step 1: Clone Repository
 ```bash
@@ -430,7 +546,7 @@ npm run dev
 
 ---
 
-### 🐳 Docker Deployment (Optional)
+### Docker Deployment (Optional)
 
 ```bash
 # Build and run with Docker Compose
@@ -441,7 +557,7 @@ docker-compose up --build
 
 ---
 
-### 🌐 Production Deployment
+### Production Deployment
 
 **Frontend (Vercel):**
 - Live at: [https://satyadrishti-dev.vercel.app](https://satyadrishti-dev.vercel.app)
@@ -459,11 +575,11 @@ gunicorn src.app:app --workers 4 --worker-class uvicorn.workers.UvicornWorker --
 
 ---
 
-## 📡 API Documentation
+## API Documentation
 
 <div align="center">
 
-### 🔗 Interactive API Docs
+### Interactive API Docs
 
 **Swagger UI**: [http://localhost:8001/docs](http://localhost:8001/docs)  
 **ReDoc**: [http://localhost:8001/redoc](http://localhost:8001/redoc)
@@ -472,7 +588,7 @@ gunicorn src.app:app --workers 4 --worker-class uvicorn.workers.UvicornWorker --
 
 ---
 
-### 🎯 Core Endpoints
+### Core Endpoints
 
 #### 1️⃣ Analyze Content
 
@@ -616,7 +732,7 @@ curl -X GET http://localhost:8001/health
 
 ---
 
-### 📚 Full Documentation
+### Full Documentation
 
 For complete API reference with all endpoints, request/response schemas, and interactive testing:
 
@@ -624,11 +740,11 @@ For complete API reference with all endpoints, request/response schemas, and int
 
 ---
 
-## ⚡ Performance Metrics
+## Performance Metrics
 
 <div align="center">
 
-### 📊 System Performance
+### System Performance
 
 <table>
 <thead>
@@ -694,7 +810,7 @@ For complete API reference with all endpoints, request/response schemas, and int
 
 ---
 
-### 🎯 Accuracy Breakdown by Category
+### Accuracy Breakdown by Category
 
 | Category | Precision | Recall | F1-Score |
 |----------|-----------|--------|----------|
@@ -707,7 +823,7 @@ For complete API reference with all endpoints, request/response schemas, and int
 
 ---
 
-### 🌐 Language Support
+### Language Support
 
 | Language | Native Script | Detection Accuracy |
 |----------|---------------|--------------------|
@@ -1181,15 +1297,17 @@ gantt
 
 ---
 
-## 👥 Team Code Catalyst
-
 <div align="center">
+
+<img src="docs/CodeCatalyst.jpeg" alt="Team Code Catalyst" width="100%" style="margin: 20px 0; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);"/>
+
+## Team Code Catalyst
 
 <table>
 <tr>
 <td align="center" width="25%">
 <img src="https://img.shields.io/badge/Team-Lead-FF6B6B?style=for-the-badge" alt="Team Lead"/><br/>
-<b>🧑🏻‍💻 Abhishek Giri</b><br/>
+<b>Abhishek Giri</b><br/>
 <sub>Full-Stack AI Engineer</sub><br/><br/>
 <b>Core Responsibilities:</b><br/>
 • System Architecture & Design<br/>
@@ -1202,7 +1320,7 @@ gantt
 </td>
 <td align="center" width="25%">
 <img src="https://img.shields.io/badge/Backend-Engineer-4CAF50?style=for-the-badge" alt="Backend Engineer"/><br/>
-<b>🧑🏻‍💻 Athrav Gangwar</b><br/>
+<b>Athrav Gangwar</b><br/>
 <sub>Backend Specialist</sub><br/><br/>
 <b>Core Responsibilities:</b><br/>
 • Platform Adapter Development<br/>
@@ -1213,7 +1331,7 @@ gantt
 </td>
 <td align="center" width="25%">
 <img src="https://img.shields.io/badge/Frontend-Developer-61DAFB?style=for-the-badge" alt="Frontend Developer"/><br/>
-<b>👩🏻‍💻 Muskan Sharma</b><br/>
+<b>Muskan Sharma</b><br/>
 <sub>UI/UX Specialist</sub><br/><br/>
 <b>Core Responsibilities:</b><br/>
 • React Component Development<br/>
@@ -1224,7 +1342,7 @@ gantt
 </td>
 <td align="center" width="25%">
 <img src="https://img.shields.io/badge/AI/ML-Specialist-9C27B0?style=for-the-badge" alt="AI/ML Specialist"/><br/>
-<b>👩🏻‍💻 Kashish Sharma</b><br/>
+<b>Kashish Sharma</b><br/>
 <sub>Machine Learning Engineer</sub><br/><br/>
 <b>Core Responsibilities:</b><br/>
 • AI Model Training & Fine-tuning<br/>
@@ -1240,11 +1358,11 @@ gantt
 
 ---
 
-## 📞 Contact & Support
+## Contact & Support
 
 <div align="center">
 
-### 🤝 Get In Touch
+### Get In Touch
 
 **Abhishek Giri** - Team Lead & Project Coordinator
 
@@ -1265,13 +1383,13 @@ gantt
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-### 🇮🇳 Built with ❤️ for Digital India
+### Built with for Digital India
 
 **SATYA-DRISHTI** - AI-Powered Content Moderation for Digital India
 

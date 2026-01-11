@@ -1,180 +1,97 @@
 from motor.motor_asyncio import AsyncIOMotorClient
-from pymongo import MongoClient
-from datetime import datetime
+from pymongo.errors import ConnectionFailure
 import os
-from dotenv import load_dotenv
+from datetime import datetime
+from src.config.logger import setup_logger
 
-load_dotenv()
+logger = setup_logger(__name__)
 
 class MongoDB:
     def __init__(self):
-        # MongoDB Atlas connection string from environment variable
-        self.connection_string = os.getenv("MONGODB_URI", "mongodb://localhost:27017/satya_drishti")
         self.client = None
         self.db = None
-        
+        self.analyses_collection = None
+        self.statistics_collection = None
+        self.cybercell_reports_collection = None
+    
     async def connect(self):
         """Connect to MongoDB"""
         try:
-            self.client = AsyncIOMotorClient(self.connection_string)
-            self.db = self.client.satya_drishti
+            mongodb_uri = os.getenv("MONGODB_URI", "mongodb://localhost:27017")
+            self.client = AsyncIOMotorClient(mongodb_uri)
+            
             # Test connection
             await self.client.admin.command('ping')
-            print("✅ MongoDB Connected Successfully!")
+            
+            self.db = self.client.satya_drishti
+            self.analyses_collection = self.db.analyses
+            self.statistics_collection = self.db.statistics
+            self.cybercell_reports_collection = self.db.cybercell_reports
+            
+            logger.info("Connected to MongoDB successfully")
             return True
-        except Exception as e:
-            print(f"❌ MongoDB Connection Failed: {e}")
+        except ConnectionFailure as e:
+            logger.error(f"MongoDB connection failed: {e}")
             return False
     
     async def disconnect(self):
         """Disconnect from MongoDB"""
         if self.client:
             self.client.close()
-            print("MongoDB Disconnected")
+            logger.info("Disconnected from MongoDB")
     
-    # Analysis Results Collection
     async def save_analysis(self, analysis_data: dict):
         """Save analysis result to database"""
         try:
-            collection = self.db.analysis_results
-            analysis_data['created_at'] = datetime.utcnow()
-            result = await collection.insert_one(analysis_data)
+            analysis_data["created_at"] = datetime.utcnow()
+            result = await self.analyses_collection.insert_one(analysis_data)
+            logger.info(f"Analysis saved with ID: {result.inserted_id}")
             return str(result.inserted_id)
         except Exception as e:
-            print(f"Error saving analysis: {e}")
+            logger.error(f"Failed to save analysis: {e}")
             return None
     
     async def get_analysis(self, analysis_id: str):
         """Get analysis by ID"""
         try:
-            collection = self.db.analysis_results
-            return await collection.find_one({"analysis_id": analysis_id})
+            from bson import ObjectId
+            result = await self.analyses_collection.find_one({"_id": ObjectId(analysis_id)})
+            if result:
+                result["_id"] = str(result["_id"])
+            return result
         except Exception as e:
-            print(f"Error getting analysis: {e}")
+            logger.error(f"Failed to get analysis: {e}")
             return None
     
-    async def get_recent_analyses(self, limit: int = 10):
-        """Get recent analyses"""
+    async def get_statistics(self):
+        """Get platform statistics"""
         try:
-            collection = self.db.analysis_results
-            cursor = collection.find().sort("created_at", -1).limit(limit)
-            return await cursor.to_list(length=limit)
-        except Exception as e:
-            print(f"Error getting recent analyses: {e}")
-            return []
-    
-    # Statistics Collection
-    async def update_stats(self, stats_data: dict):
-        """Update governance statistics"""
-        try:
-            collection = self.db.governance_stats
-            stats_data['updated_at'] = datetime.utcnow()
+            total_analyses = await self.analyses_collection.count_documents({})
             
-            # Upsert (update or insert)
-            await collection.update_one(
-                {"_id": "global_stats"},
-                {"$set": stats_data},
-                upsert=True
-            )
-            return True
-        except Exception as e:
-            print(f"Error updating stats: {e}")
-            return False
-    
-    async def get_stats(self):
-        """Get governance statistics"""
-        try:
-            collection = self.db.governance_stats
-            stats = await collection.find_one({"_id": "global_stats"})
-            if not stats:
-                # Initialize default stats
-                default_stats = {
-                    "_id": "global_stats",
-                    "total_analyzed": 0,
-                    "high_risk_detected": 0,
-                    "reports_generated": 0,
-                    "by_category": {},
-                    "by_language": {},
-                    "updated_at": datetime.utcnow()
-                }
-                await collection.insert_one(default_stats)
-                return default_stats
-            return stats
-        except Exception as e:
-            print(f"Error getting stats: {e}")
-            return None
-    
-    async def increment_stat(self, field: str, value: int = 1):
-        """Increment a specific stat"""
-        try:
-            collection = self.db.governance_stats
-            await collection.update_one(
-                {"_id": "global_stats"},
-                {"$inc": {field: value}, "$set": {"updated_at": datetime.utcnow()}},
-                upsert=True
-            )
-            return True
-        except Exception as e:
-            print(f"Error incrementing stat: {e}")
-            return False
-    
-    # Cybercell Reports Collection
-    async def save_report(self, report_data: dict):
-        """Save cybercell report"""
-        try:
-            collection = self.db.cybercell_reports
-            report_data['created_at'] = datetime.utcnow()
-            result = await collection.insert_one(report_data)
-            return str(result.inserted_id)
-        except Exception as e:
-            print(f"Error saving report: {e}")
-            return None
-    
-    async def get_report(self, report_id: str):
-        """Get report by ID"""
-        try:
-            collection = self.db.cybercell_reports
-            return await collection.find_one({"report_id": report_id})
-        except Exception as e:
-            print(f"Error getting report: {e}")
-            return None
-    
-    async def get_reports_by_severity(self, severity: str, limit: int = 10):
-        """Get reports by severity level"""
-        try:
-            collection = self.db.cybercell_reports
-            cursor = collection.find({"severity": severity}).sort("created_at", -1).limit(limit)
-            return await cursor.to_list(length=limit)
-        except Exception as e:
-            print(f"Error getting reports: {e}")
-            return []
-    
-    # Source Verification Cache
-    async def cache_source_verification(self, url: str, verification_data: dict):
-        """Cache source verification result"""
-        try:
-            collection = self.db.source_cache
-            verification_data['url'] = url
-            verification_data['cached_at'] = datetime.utcnow()
+            # Risk level distribution
+            pipeline = [
+                {"$group": {"_id": "$risk_assessment.level", "count": {"$sum": 1}}}
+            ]
+            risk_distribution = {}
+            async for doc in self.analyses_collection.aggregate(pipeline):
+                risk_distribution[doc["_id"]] = doc["count"]
             
-            await collection.update_one(
-                {"url": url},
-                {"$set": verification_data},
-                upsert=True
-            )
-            return True
+            # Platform breakdown
+            pipeline = [
+                {"$group": {"_id": "$platform", "count": {"$sum": 1}}}
+            ]
+            platform_breakdown = {}
+            async for doc in self.analyses_collection.aggregate(pipeline):
+                platform_breakdown[doc["_id"]] = doc["count"]
+            
+            return {
+                "total_analyses": total_analyses,
+                "risk_distribution": risk_distribution,
+                "platform_breakdown": platform_breakdown
+            }
         except Exception as e:
-            print(f"Error caching verification: {e}")
-            return False
-    
-    async def get_cached_verification(self, url: str):
-        """Get cached source verification"""
-        try:
-            collection = self.db.source_cache
-            return await collection.find_one({"url": url})
-        except Exception as e:
-            print(f"Error getting cached verification: {e}")
-            return None
+            logger.error(f"Failed to get statistics: {e}")
+            return {}
 
 # Global MongoDB instance
 mongodb = MongoDB()

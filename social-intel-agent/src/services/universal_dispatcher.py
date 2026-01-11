@@ -5,7 +5,14 @@ from src.analysis.text.hate_speech import HateSpeechDetector
 from src.analysis.text.content_classifier import ContentClassifier
 from src.analysis.text.intent_detector import IntentDetector
 from src.analysis.text.nsfw_detector import NSFWDetector
-from src.analysis.image.image_analyzer import ImageAnalyzer
+from src.analysis.text.misinformation_detector import MisinformationDetector
+from src.analysis.image.image_extractor import ImageExtractor
+from src.analysis.image.nsfw_image_detector import NSFWImageDetector
+from src.analysis.image.violence_detector import ViolenceDetector
+from src.analysis.image.religious_hate_detector import ReligiousHateDetector
+from src.analysis.image.ocr_extractor import OCRExtractor
+from src.analysis.video.video_analyzer import VideoAnalyzer
+from src.analysis.social.social_media_analyzer import SocialMediaAnalyzer
 from src.analysis.scoring.risk_score import RiskScorer
 from src.config.logger import setup_logger
 import uuid
@@ -24,7 +31,14 @@ class UniversalAnalysisDispatcher:
         self.content_classifier = ContentClassifier()
         self.intent_detector = IntentDetector()
         self.nsfw_detector = NSFWDetector()
-        self.image_analyzer = ImageAnalyzer()
+        self.misinformation_detector = MisinformationDetector()
+        self.image_extractor = ImageExtractor()
+        self.nsfw_image_detector = NSFWImageDetector()
+        self.violence_detector = ViolenceDetector()
+        self.religious_hate_detector = ReligiousHateDetector()
+        self.ocr_extractor = OCRExtractor()
+        self.video_analyzer = VideoAnalyzer()
+        self.social_media_analyzer = SocialMediaAnalyzer()
         self.risk_scorer = RiskScorer()
     
     async def analyze(self, url: str, deep_analysis: bool = False):
@@ -73,6 +87,15 @@ class UniversalAnalysisDispatcher:
             logger.info("Detecting NSFW content")
             nsfw = self.nsfw_detector.detect(analysis_text)
             
+            # Step 7.5: Misinformation detection
+            logger.info("Detecting misinformation")
+            misinformation = self.misinformation_detector.detect(analysis_text)
+            
+            # Step 7.6: Social media analysis
+            logger.info("Analyzing social media patterns")
+            platform = extracted_data.get("detected_platform", "unknown")
+            social_analysis = self.social_media_analyzer.analyze_social_content(analysis_text, platform)
+            
             # Step 8: Image analysis with OCR text analysis
             logger.info("Analyzing images")
             image_analysis = []
@@ -82,24 +105,53 @@ class UniversalAnalysisDispatcher:
                 logger.info(f"HTML length: {len(html) if html else 0}, Base URL: {base_url}")
                 
                 if html:
-                    # Create text analyzer function for OCR
-                    def analyze_ocr_text(text):
-                        return {
-                            "sentiment": self.sentiment_analyzer.analyze(text[:512]),
-                            "toxicity": self.toxicity_detector.detect(text[:512]),
-                            "hate_speech": self.hate_speech_detector.detect(text[:512]),
-                            "content_categories": self.content_classifier.classify(text[:512]),
-                            "risk_assessment": self.risk_scorer.calculate({
-                                "sentiment": self.sentiment_analyzer.analyze(text[:512]),
-                                "toxicity": self.toxicity_detector.detect(text[:512]),
-                                "hate_speech": self.hate_speech_detector.detect(text[:512]),
-                                "content_categories": self.content_classifier.classify(text[:512]),
-                                "intent": {"intent": "unknown", "confidence": 0},
-                                "nsfw": self.nsfw_detector.detect(text[:512])
-                            })
-                        }
+                    image_urls = self.image_extractor.extract_images(html, base_url)
                     
-                    image_analysis = self.image_analyzer.analyze_images(html, base_url, analyze_ocr_text)
+                    for img_url in image_urls[:10]:  # Limit to 10 images
+                        logger.info(f"Analyzing image: {img_url}")
+                        image = self.image_extractor.download_image(img_url)
+                        
+                        if image is None:
+                            continue
+                        
+                        # Run all detectors
+                        nsfw = self.nsfw_image_detector.detect(image)
+                        violence = self.violence_detector.detect(image)
+                        religious_hate = self.religious_hate_detector.detect(image, nsfw)
+                        ocr = self.ocr_extractor.extract_text(image)
+                        
+                        # Analyze OCR text if present
+                        ocr_analysis = None
+                        if ocr.get("text") and len(ocr.get("text", "").strip()) > 10:
+                            ocr_text = ocr.get("text")[:512]
+                            ocr_analysis = {
+                                "sentiment": self.sentiment_analyzer.analyze(ocr_text),
+                                "toxicity": self.toxicity_detector.detect(ocr_text),
+                                "hate_speech": self.hate_speech_detector.detect(ocr_text),
+                                "content_categories": self.content_classifier.classify(ocr_text),
+                                "risk_assessment": self.risk_scorer.calculate({
+                                    "sentiment": self.sentiment_analyzer.analyze(ocr_text),
+                                    "toxicity": self.toxicity_detector.detect(ocr_text),
+                                    "hate_speech": self.hate_speech_detector.detect(ocr_text),
+                                    "content_categories": self.content_classifier.classify(ocr_text),
+                                    "intent": {"intent": "unknown", "confidence": 0},
+                                    "nsfw": self.nsfw_detector.detect(ocr_text)
+                                })
+                            }
+                        
+                        # Calculate image risk score
+                        risk_score = self._calculate_image_risk(nsfw, violence, religious_hate, ocr, ocr_analysis)
+                        
+                        image_analysis.append({
+                            "image_url": img_url,
+                            "nsfw": nsfw,
+                            "violence": violence,
+                            "religious_hate": religious_hate,
+                            "ocr": ocr,
+                            "ocr_analysis": ocr_analysis,
+                            "image_risk_score": risk_score
+                        })
+                    
                     logger.info(f"Image analysis completed: {len(image_analysis)} images analyzed")
                 else:
                     logger.warning("No HTML content available for image extraction")
@@ -116,6 +168,8 @@ class UniversalAnalysisDispatcher:
                 "content_categories": content_categories,
                 "intent": intent,
                 "nsfw": nsfw,
+                "misinformation": misinformation,
+                "social_analysis": social_analysis,
                 "image_analysis": image_analysis
             }
             
@@ -155,7 +209,9 @@ class UniversalAnalysisDispatcher:
                     "hate_speech": hate_speech,
                     "content_categories": content_categories,
                     "intent": intent,
-                    "nsfw": nsfw
+                    "nsfw": nsfw,
+                    "misinformation": misinformation,
+                    "social_analysis": social_analysis
                 },
                 "summary": self._generate_summary(risk_assessment, sentiment, toxicity, hate_speech, content_categories, intent, nsfw, image_analysis),
                 "text_preview": text_content[:200] + ("..." if len(text_content) > 200 else "")
@@ -241,6 +297,43 @@ class UniversalAnalysisDispatcher:
             return 0
         scores = [img.get('image_risk_score', 0) for img in image_analysis]
         return int(sum(scores) / len(scores)) if scores else 0
+    
+    def _calculate_image_risk(self, nsfw, violence, religious_hate, ocr, ocr_analysis):
+        """Calculate comprehensive image risk score"""
+        risk = 0
+        
+        # NSFW scoring (0-35 points)
+        if nsfw.get("is_explicit"):
+            risk += nsfw.get("confidence", 0) * 35
+        elif nsfw.get("is_sexual"):
+            risk += nsfw.get("confidence", 0) * 25
+        elif nsfw.get("is_nsfw"):
+            risk += nsfw.get("confidence", 0) * 20
+        
+        # Violence scoring (0-30 points)
+        if violence.get("is_violent"):
+            risk += violence.get("violence_score", 0) * 30
+        
+        # Hateful visual scoring (0-25 points)
+        if violence.get("is_hateful_visual"):
+            risk += violence.get("hate_score", 0) * 25
+        
+        # Religious hate scoring (0-30 points)
+        if religious_hate.get("is_religious_hate"):
+            risk += religious_hate.get("confidence", 0) * 30
+        
+        # Spam scoring (0-10 points)
+        if violence.get("is_spam"):
+            risk += violence.get("spam_score", 0) * 10
+        
+        # OCR text analysis (0-20 points)
+        if ocr_analysis:
+            ocr_risk = ocr_analysis.get("risk_assessment", {}).get("score", 0)
+            risk += (ocr_risk / 100) * 20
+        elif ocr.get("text") and len(ocr.get("text", "")) > 10:
+            risk += 5  # Base bonus for text presence
+        
+        return min(int(risk), 100)
     
     def _get_risk_level(self, score):
         if score >= 70:

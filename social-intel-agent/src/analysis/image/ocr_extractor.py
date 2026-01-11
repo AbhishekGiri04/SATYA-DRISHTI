@@ -7,8 +7,13 @@ logger = setup_logger(__name__)
 class OCRExtractor:
     def __init__(self):
         try:
-            self.reader = easyocr.Reader(['en'], gpu=False, verbose=False)
-            logger.info("EasyOCR initialized")
+            # Try GPU first, fallback to CPU if needed
+            try:
+                self.reader = easyocr.Reader(['en'], gpu=True, verbose=False)
+                logger.info("EasyOCR initialized with GPU acceleration")
+            except:
+                self.reader = easyocr.Reader(['en'], gpu=False, verbose=False)
+                logger.info("EasyOCR initialized with CPU (GPU unavailable)")
         except Exception as e:
             logger.error(f"EasyOCR init failed: {e}")
             self.reader = None

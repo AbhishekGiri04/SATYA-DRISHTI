@@ -6,9 +6,7 @@ class ContentClassifier:
     
     def __init__(self):
         try:
-            # Lightweight: mDeBERTa-v3-base-mnli (279MB instead of 1.5GB BART)
-            self.classifier = pipeline("zero-shot-classification", 
-                                      model="MoritzLaurer/mDeBERTa-v3-base-mnli-xnli")
+            self.classifier = pipeline("zero-shot-classification", model="facebook/bart-large-mnli")
         except:
             self.classifier = None
     

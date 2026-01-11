@@ -1,13 +1,12 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from src.routers import analyze, health, image_analyze, governance
-from src.config.logger import setup_logger
 from src.database.mongodb import mongodb
+from src.config.logger import setup_logger
 
 app = FastAPI(
-    title="SATYA-DRISHTI - Digital Suraksha Framework",
-    version="2.0.0",
-    description="AI-Powered Content Moderation by Abhishek Giri"
+    title="Social Intelligence Agent",
+    version="1.0.0"
 )
 
 # CORS
@@ -27,11 +26,7 @@ logger = setup_logger(__name__)
 # Root endpoint
 @app.get("/")
 def root():
-    return {
-        "message": "SATYA-DRISHTI API is running",
-        "developer": "Abhishek Giri",
-        "github": "https://github.com/abhishekgiri04"
-    }
+    return {"message": "Social Intelligence Agent API is running"}
 
 # Routers
 app.include_router(analyze.router)
@@ -42,12 +37,11 @@ app.include_router(governance.router)
 # Startup event
 @app.on_event("startup")
 async def startup_event():
-    logger.info("SATYA-DRISHTI started - Developed by Abhishek Giri")
-    # Connect to MongoDB
+    logger.info("Social Intelligence Agent started")
     await mongodb.connect()
 
+# Shutdown event
 @app.on_event("shutdown")
 async def shutdown_event():
-    logger.info("SATYA-DRISHTI shutting down")
-    # Disconnect from MongoDB
+    logger.info("Social Intelligence Agent shutting down")
     await mongodb.disconnect()

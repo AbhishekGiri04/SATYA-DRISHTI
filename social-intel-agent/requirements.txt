@@ -1,56 +1,39 @@
-# ========================================
-# LIGHTWEIGHT REQUIREMENTS (Total: ~1GB)
-# ========================================
-
 # Core
-numpy>=1.24.0
+numpy==1.26.4
 
-# PyTorch (CPU version - smaller)
-torch>=2.0.0
-torchvision>=0.15.0
+# PyTorch
+torch==2.1.2
+torchvision==0.16.2
 
 # ML Libraries
-scikit-learn>=1.3.0
-transformers>=4.30.0
+scikit-learn==1.3.2
+scikit-image==0.21.0
+transformers==4.38.1
 
-# OCR (Lightweight)
-pytesseract>=0.3.10
+# OCR
+easyocr==1.7.0
 
 # Computer Vision
-opencv-python-headless>=4.8.0
-Pillow>=10.0.0
+opencv-python-headless==4.8.1.78
+Pillow==10.1.0
 
 # Web Framework
-fastapi>=0.100.0
-uvicorn>=0.20.0
-pydantic>=2.0.0
-pydantic-settings>=2.0.0
+fastapi==0.104.1
+uvicorn==0.24.0
+pydantic==2.12.5
+pydantic-settings==2.12.0
 
 # Web Scraping
-playwright>=1.40.0
-beautifulsoup4>=4.12.0
-requests>=2.30.0
-trafilatura>=1.6.0
+playwright==1.40.0
+beautifulsoup4==4.12.2
+requests==2.31.0
+trafilatura==1.6.2
 
 # Utilities
-python-multipart>=0.0.6
-python-dotenv>=1.0.0
-pandas>=2.0.0
+python-multipart==0.0.6
+python-dotenv==1.0.0
+pandas==2.0.3
 
-# ========================================
-# LIGHTWEIGHT MODELS USED:
-# ========================================
-# Text Models:
-# 1. distilbert-base-uncased (67MB) - Sentiment
-# 2. unitary/unbiased-toxic-roberta (125MB) - Toxicity
-# 3. cardiffnlp/twitter-roberta-base-hate (125MB) - Hate Speech
-# 4. michellejieli/NSFW_text_classifier (125MB) - NSFW Text
-# 5. MoritzLaurer/mDeBERTa-v3-base-mnli-xnli (279MB) - Intent + Categories
-#
-# Image Models:
-# 6. Falconsai/nsfw_image_detection (50MB) - NSFW Images
-# 7. openai/clip-vit-base-patch32 (150MB) - Violence Detection
-# 8. pytesseract (30MB) - OCR
-#
-# Total Models: ~950MB (vs 6.5GB original)
-# Savings: 85% reduction
+# Database
+motor==3.3.2
+pymongo==4.6.1
