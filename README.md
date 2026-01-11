@@ -851,73 +851,22 @@ For complete API reference with all endpoints, request/response schemas, and int
 
 ---
 
-## Performance Metrics
-
-<div align="center">
+## 📊 Performance Metrics
 
 ### System Performance
 
-<table>
-<thead>
-<tr>
-<th>🎯 Metric</th>
-<th>📈 Value</th>
-<th>🏆 Benchmark</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><b>Overall Accuracy</b></td>
-<td><b>87%</b></td>
-<td>Industry avg: 40-50%</td>
-</tr>
-<tr>
-<td><b>Processing Time (CPU)</b></td>
-<td><b>10-15 seconds</b></td>
-<td>Traditional: 24-48 hours</td>
-</tr>
-<tr>
-<td><b>Processing Time (GPU)</b></td>
-<td><b>3-5 seconds</b></td>
-<td>99.9% faster than manual</td>
-</tr>
-<tr>
-<td><b>False Positive Rate</b></td>
-<td><b>12%</b></td>
-<td>Traditional: 60%</td>
-</tr>
-<tr>
-<td><b>Supported Languages</b></td>
-<td><b>9 Indian languages</b></td>
-<td>Hindi, English, Bengali, Tamil, Telugu, Marathi, Gujarati, Kannada, Malayalam</td>
-</tr>
-<tr>
-<td><b>Platforms Supported</b></td>
-<td><b>8+ platforms</b></td>
-<td>Twitter, Reddit, Instagram, YouTube, TikTok, Facebook, News Sites, Blogs</td>
-</tr>
-<tr>
-<td><b>AI Models</b></td>
-<td><b>12 specialized models</b></td>
-<td>7 Text + 5 Image analysis models</td>
-</tr>
-<tr>
-<td><b>Concurrent Requests</b></td>
-<td><b>100+ simultaneous</b></td>
-<td>ThreadPoolExecutor optimization</td>
-</tr>
-<tr>
-<td><b>Uptime</b></td>
-<td><b>99.5%</b></td>
-<td>Production-grade reliability</td>
-</tr>
-<tr>
-<td><b>API Response Time</b></td>
-<td><b>&lt;200ms</b></td>
-<td>Excluding AI processing</td>
-</tr>
-</tbody>
-</table>
+| 🎯 Metric | 📈 Value | 🏆 Benchmark |
+|---------|---------|-------------|
+| **Overall Accuracy** | **87%** | Industry avg: 40-50% |
+| **Processing Time (CPU)** | **10-15 seconds** | Traditional: 24-48 hours |
+| **Processing Time (GPU)** | **3-5 seconds** | 99.9% faster than manual |
+| **False Positive Rate** | **12%** | Traditional: 60% |
+| **Supported Languages** | **9 Indian languages** | Hindi, English, Bengali, Tamil, Telugu, Marathi, Gujarati, Kannada, Malayalam |
+| **Platforms Supported** | **8+ platforms** | Twitter, Reddit, Instagram, YouTube, TikTok, Facebook, News Sites, Blogs |
+| **AI Models** | **12 specialized models** | 7 Text + 5 Image analysis models |
+| **Concurrent Requests** | **100+ simultaneous** | ThreadPoolExecutor optimization |
+| **Uptime** | **99.5%** | Production-grade reliability |
+| **API Response Time** | **<200ms** | Excluding AI processing |
 
 ---
 
@@ -947,8 +896,6 @@ For complete API reference with all endpoints, request/response schemas, and int
 | Gujarati | ગુજરાતી | 85% |
 | Kannada | ಕನ್ನಡ | 84% |
 | Malayalam | മലയാളം | 83% |
-
-</div>
 
 
 
