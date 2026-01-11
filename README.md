@@ -281,11 +281,7 @@ graph TD
 
 </div>
 
-<div align="center">
-
 ## Technical Flow Diagrams
-
-<div align="center">
 
 ### Data Flow Diagram (Level 0)
 
@@ -364,8 +360,6 @@ graph TD
     style I fill:#F1F8E9,stroke:#8BC34A,stroke-width:2px,color:#000
     style J fill:#C8E6C9,stroke:#4CAF50,stroke-width:2px,color:#000
 ```
-
-</div>
 
 ---
 
@@ -495,8 +489,6 @@ graph LR
     style D fill:#F3E5F5,stroke:#9C27B0,stroke-width:2px,color:#000
     style E fill:#C8E6C9,stroke:#4CAF50,stroke-width:3px,color:#000
 ```
-
----
 
 #### 📥 Step 1: Clone Repository
 
@@ -903,7 +895,7 @@ For complete API reference with all endpoints, request/response schemas, and int
 
 <div align="center">
 
-<img src="docs/CodeCatalyst.jpeg" alt="Team Code Catalyst" width="100%" style="margin: 20px 0; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);"/>
+<img src="docs/CodeCatalyst.jpg" alt="Team Code Catalyst" width="100%" style="margin: 20px 0; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);"/>
 
 ## 👥 Team Code Catalyst
 
