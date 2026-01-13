@@ -111,44 +111,55 @@ India's digital landscape is growing exponentially with over **700 million inter
 
 ```
 SATYA-DRISHTI/
-├── 📂 react-interface/              #  React frontend (Port 5173)
+├── 📂 react-interface/              # 🎨 React frontend (Port 5173)
 │   ├── 📂 src/
-│   │   ├── 📂 components/           #  Reusable UI components
-│   │   ├── 📄 App.jsx               #  Main application
-│   │   ├── 📄 App.css               #  Global styles
-│   │   └── 📄 main.jsx              #  Entry point
-│   ├── 📄 package.json              #  Frontend dependencies
-│   ├── 📄 vite.config.js            #  Vite configuration
-│   └── 📄 .env.example              #  Environment template
-├── 📂 social-intel-agent/           #  FastAPI backend (Port 8001)
+│   │   ├── 📂 components/           # 🧩 Reusable UI components
+│   │   ├── 📄 App.jsx               # 🚀 Main application
+│   │   ├── 📄 App.css               # 🎨 Global styles
+│   │   ├── 📄 main.jsx              # ⚡ Entry point
+│   │   ├── 📄 emblem.svg            # 🏛️ Government emblem
+│   │   ├── 📄 favicon.svg           # 🔖 Favicon
+│   │   └── 📄 Security.json         # 🔒 Security animation
+│   ├── 📄 package.json              # 📦 Frontend dependencies
+│   ├── 📄 vite.config.js            # ⚙️ Vite configuration
+│   ├── 📄 SETUP.md                  # 📖 Setup instructions
+│   └── 📄 .env.example              # 🔧 Environment template
+├── 📂 social-intel-agent/           # 🔧 FastAPI backend (Port 8001)
 │   ├── 📂 src/
-│   │   ├── 📂 analysis/             #  AI analysis engines
-│   │   ├── 📂 config/               #  Configuration files
-│   │   ├── 📂 database/             #  MongoDB models
-│   │   ├── 📂 routers/              #  API routes
-│   │   ├── 📂 scraping/             #  Platform adapters
-│   │   ├── 📂 services/             #  External services
-│   │   ├── 📄 app.py                #  Main FastAPI app
-│   │   ├── 📄 app_governance.py     #  Governance module
-│   │   └── 📄 app_minimal.py        #  Minimal test app
-│   ├── 📄 requirements.txt          #  Python dependencies
-│   └── 📄 .env.example              #  Environment template
-├── 📂 docs/                         #  Documentation
-│   ├── 📂 round2/                   #  Round 2 improvements
+│   │   ├── 📂 analysis/             # 🤖 AI analysis engines
+│   │   ├── 📂 config/               # ⚙️ Configuration files
+│   │   ├── 📂 database/             # 💾 MongoDB models
+│   │   ├── 📂 routers/              # 🛣️ API routes
+│   │   ├── 📂 scraping/             # 🔍 Platform adapters
+│   │   ├── 📂 services/             # 📧 External services
+│   │   ├── 📄 app.py                # 🚀 Main FastAPI app
+│   │   ├── 📄 app_governance.py     # ⚖️ Governance module
+│   │   └── 📄 app_minimal.py        # 🔬 Minimal test app
+│   ├── 📄 requirements.txt          # 📦 Python dependencies
+│   └── 📄 .env.example              # 🔧 Environment template
+├── 📂 docs/                         # 📸 Documentation
+│   ├── 📂 round2/                   # 📋 Round 2 improvements
 │   │   └── 📄 ROUND2_IMPROVEMENTS.md
-│   ├── 📄 LoadingPage.png           #  Loading screen
-│   ├── 📄 HomePage.png              #  Home page
-│   ├── 📄 Dashboard.png             #  Analytics dashboard
-│   ├── 📄 AboutPage.png             #  About page
-│   ├── 📄 Analyzing-Content.png     #  Analysis in progress
-│   └── 📄 Result.png                #  Analysis results
-├── 📄 README.md                     #  Project documentation
-├── 📄 LICENSE                       #  MIT License
-├── 📄 .env.example                  #  Environment template
-├── 📄 .gitignore                    #  Git ignore patterns
-├── 📄 Dockerfile                    #  Docker configuration
-├── 📄 INSTALL.sh                    #  Installation script
-└── 📄 run.sh                        #  Run script
+│   ├── 📄 SATYA-DRISHTI.jpeg        # 🖼️ Project banner
+│   ├── 📄 ProblemStatement.png      # 🖼️ Problem overview
+│   ├── 📄 OurSolution.png           # 🖼️ Solution overview
+│   ├── 📄 KeyFeatures.jpeg          # 🖼️ Features overview
+│   ├── 📄 Architecture-Diagrams.png # 🖼️ Architecture & DFD
+│   ├── 📄 TechnicalStack.png        # 🖼️ Tech stack
+│   ├── 📄 LoadingPage.png           # 🖼️ Loading screen
+│   ├── 📄 HomePage.png              # 🖼️ Home page
+│   ├── 📄 Dashboard.png             # 🖼️ Analytics dashboard
+│   ├── 📄 AboutPage.png             # 🖼️ About page
+│   ├── 📄 Analyzing-Content.png     # 🖼️ Analysis in progress
+│   └── 📄 Result.png                # 🖼️ Analysis results
+├── 📄 README.md                     # 📖 Project documentation
+├── 📄 LICENSE                       # ⚖️ MIT License
+├── 📄 .env.example                  # 🔧 Environment template
+├── 📄 .gitignore                    # 🚫 Git ignore patterns
+├── 📄 Dockerfile                    # 🐳 Docker configuration
+├── 📄 render.yaml                   # 🚀 Render deployment config
+├── 📄 INSTALL.sh                    # 🚀 Installation script
+└── 📄 run.sh                        # ▶️ Run script
 ```
 ---
 
