@@ -1,6 +1,6 @@
-# 🚀 SATYA-DRISHTI - Round 2 Implementation Guide
-
 <div align="center">
+
+# 🚀 SATYA-DRISHTI - Round 2 Implementation Guide
 
 **Transform from Prototype to Production-Ready Enterprise System**
 
