@@ -107,7 +107,7 @@ class UniversalAnalysisDispatcher:
                 if html:
                     image_urls = self.image_extractor.extract_images(html, base_url)
                     
-                    for img_url in image_urls[:10]:  # Limit to 10 images
+                    for img_url in image_urls[:3]:  # Limit to 3 images for faster processing
                         logger.info(f"Analyzing image: {img_url}")
                         image = self.image_extractor.download_image(img_url)
                         

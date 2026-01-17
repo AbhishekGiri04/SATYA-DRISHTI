@@ -28,7 +28,7 @@ class ImageExtractor:
     def download_image(self, url: str):
         try:
             headers = {'User-Agent': 'Mozilla/5.0', 'Referer': 'https://www.reddit.com/'}
-            response = requests.get(url, timeout=10, headers=headers, stream=True)
+            response = requests.get(url, timeout=5, headers=headers, stream=True)  # Reduced timeout
             img = Image.open(BytesIO(response.content)).convert('RGB')
             # Normalize size for consistent model input
             img = img.resize((512, 512), Image.Resampling.LANCZOS)

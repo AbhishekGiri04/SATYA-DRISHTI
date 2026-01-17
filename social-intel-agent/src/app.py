@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from src.routers import analyze, health, image_analyze, governance
+from src.routers import analyze, health, image_analyze, governance, contact
 from src.database.mongodb import mongodb
 from src.config.logger import setup_logger
 
@@ -33,6 +33,7 @@ app.include_router(analyze.router)
 app.include_router(image_analyze.router)
 app.include_router(health.router)
 app.include_router(governance.router)
+app.include_router(contact.router)
 
 # Startup event
 @app.on_event("startup")

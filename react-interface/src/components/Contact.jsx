@@ -15,19 +15,30 @@ function Contact() {
     setTimeout(() => setNotification({ show: false, message: '', type: '' }), 5000);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Create mailto link
-    const mailtoLink = `mailto:abhishekgiri1978@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    )}`;
-    
-    window.location.href = mailtoLink;
-    showNotification('Opening your email client...', 'success');
-    
-    // Reset form
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    try {
+      const response = await fetch('http://localhost:8001/contact/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      const data = await response.json();
+      
+      if (response.ok) {
+        showNotification(data.message || 'Message sent successfully!', 'success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        showNotification(data.detail || 'Failed to send message. Please try again.', 'error');
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+      showNotification('Network error. Please check your connection and try again.', 'error');
+    }
   };
 
   const handleChange = (e) => {
@@ -74,7 +85,7 @@ function Contact() {
                 required
               />
             </div>
-            <div className="form-group">
+            <div className="form-group full-width">
               <label>Subject</label>
               <input
                 type="text"
@@ -85,7 +96,7 @@ function Contact() {
                 required
               />
             </div>
-            <div className="form-group">
+            <div className="form-group full-width">
               <label>Message</label>
               <textarea
                 name="message"

@@ -13,7 +13,7 @@ function HowItWorks() {
           <span>AI-Powered Intelligence</span>
         </div>
         <h1>How SATYA-DRISHTI Works</h1>
-        <p>Deep dive into our advanced 12-model AI architecture and comprehensive content analysis framework designed for India's digital security</p>
+        <p>Discover how our intelligent AI-powered system analyzes digital content in real-time, combining cutting-edge machine learning with India's legal framework to protect citizens from online threats</p>
         <div className="hero-stats-cards">
           <div className="stat-card blue-card">
             <div className="stat-icon">

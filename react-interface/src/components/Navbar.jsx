@@ -3,7 +3,6 @@ import './Navbar.css';
 import emblem from '../emblem.svg';
 
 function Navbar({ onSectionChange, currentSection }) {
-  const [activeSection, setActiveSection] = useState(currentSection || 'home');
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -16,7 +15,6 @@ function Navbar({ onSectionChange, currentSection }) {
   }, []);
 
   const handleNavClick = (section) => {
-    setActiveSection(section);
     onSectionChange(section);
     setIsMobileMenuOpen(false);
   };
@@ -42,7 +40,7 @@ function Navbar({ onSectionChange, currentSection }) {
           {/* Desktop Navigation */}
           <div className="nav-links">
             <button
-              className={`nav-btn ${activeSection === 'home' ? 'active' : ''}`}
+              className={`nav-btn ${currentSection === 'home' ? 'active' : ''}`}
               onClick={() => handleNavClick('home')}
             >
               <svg className="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -52,7 +50,7 @@ function Navbar({ onSectionChange, currentSection }) {
               <span className="nav-text">Home</span>
             </button>
             <button
-              className={`nav-btn ${activeSection === 'how-it-works' ? 'active' : ''}`}
+              className={`nav-btn ${currentSection === 'how-it-works' ? 'active' : ''}`}
               onClick={() => handleNavClick('how-it-works')}
             >
               <svg className="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -61,7 +59,7 @@ function Navbar({ onSectionChange, currentSection }) {
               <span className="nav-text">How It Works</span>
             </button>
             <button
-              className={`nav-btn ${activeSection === 'about' ? 'active' : ''}`}
+              className={`nav-btn ${currentSection === 'about' ? 'active' : ''}`}
               onClick={() => handleNavClick('about')}
             >
               <svg className="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -72,7 +70,7 @@ function Navbar({ onSectionChange, currentSection }) {
               <span className="nav-text">About</span>
             </button>
             <button
-              className={`nav-btn ${activeSection === 'governance' ? 'active' : ''}`}
+              className={`nav-btn ${currentSection === 'governance' ? 'active' : ''}`}
               onClick={() => handleNavClick('governance')}
             >
               <svg className="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -82,7 +80,7 @@ function Navbar({ onSectionChange, currentSection }) {
               <span className="nav-text">Governance</span>
             </button>
             <button
-              className={`nav-btn ${activeSection === 'contact' ? 'active' : ''}`}
+              className={`nav-btn ${currentSection === 'contact' ? 'active' : ''}`}
               onClick={() => handleNavClick('contact')}
             >
               <svg className="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -106,7 +104,7 @@ function Navbar({ onSectionChange, currentSection }) {
         {/* Mobile Navigation */}
         <div className={`mobile-nav ${isMobileMenuOpen ? 'open' : ''}`}>
           <button
-            className={`mobile-nav-btn ${activeSection === 'home' ? 'active' : ''}`}
+            className={`mobile-nav-btn ${currentSection === 'home' ? 'active' : ''}`}
             onClick={() => handleNavClick('home')}
           >
             <svg className="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -116,7 +114,7 @@ function Navbar({ onSectionChange, currentSection }) {
             Home
           </button>
           <button
-            className={`mobile-nav-btn ${activeSection === 'how-it-works' ? 'active' : ''}`}
+            className={`mobile-nav-btn ${currentSection === 'how-it-works' ? 'active' : ''}`}
             onClick={() => handleNavClick('how-it-works')}
           >
             <svg className="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -126,17 +124,18 @@ function Navbar({ onSectionChange, currentSection }) {
             How It Works
           </button>
           <button
-            className={`mobile-nav-btn ${activeSection === 'about' ? 'active' : ''}`}
+            className={`mobile-nav-btn ${currentSection === 'about' ? 'active' : ''}`}
             onClick={() => handleNavClick('about')}
           >
             <svg className="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
               <circle cx="12" cy="12" r="10"/>
-              <path d="m9,12 2,2 4,-4"/>
+              <line x1="12" y1="16" x2="12" y2="12"/>
+              <line x1="12" y1="8" x2="12.01" y2="8"/>
             </svg>
             About
           </button>
           <button
-            className={`mobile-nav-btn ${activeSection === 'governance' ? 'active' : ''}`}
+            className={`mobile-nav-btn ${currentSection === 'governance' ? 'active' : ''}`}
             onClick={() => handleNavClick('governance')}
           >
             <svg className="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -148,7 +147,7 @@ function Navbar({ onSectionChange, currentSection }) {
             Governance
           </button>
           <button
-            className={`mobile-nav-btn ${activeSection === 'contact' ? 'active' : ''}`}
+            className={`mobile-nav-btn ${currentSection === 'contact' ? 'active' : ''}`}
             onClick={() => handleNavClick('contact')}
           >
             <svg className="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
