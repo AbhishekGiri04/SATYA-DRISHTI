@@ -328,27 +328,30 @@ body {
 }
 
 .capability.blue .capability-icon {
-  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
 }
 
 .capability.blue .capability-icon svg {
-  stroke: #1e40af;
+  stroke: #ffffff;
+  stroke-width: 2.5;
 }
 
 .capability.green .capability-icon {
-  background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+  background: linear-gradient(135deg, #10b981, #059669);
 }
 
 .capability.green .capability-icon svg {
-  stroke: #059669;
+  stroke: #ffffff;
+  stroke-width: 2.5;
 }
 
 .capability.orange .capability-icon {
-  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  background: linear-gradient(135deg, #f59e0b, #d97706);
 }
 
 .capability.orange .capability-icon svg {
-  stroke: #d97706;
+  stroke: #ffffff;
+  stroke-width: 2.5;
 }
 
 .capability-info {
