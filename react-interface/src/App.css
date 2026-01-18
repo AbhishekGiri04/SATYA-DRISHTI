@@ -334,6 +334,8 @@ body {
 .capability.blue .capability-icon svg {
   stroke: #ffffff;
   stroke-width: 2.5;
+  width: 28px;
+  height: 28px;
 }
 
 .capability.green .capability-icon {
@@ -343,6 +345,8 @@ body {
 .capability.green .capability-icon svg {
   stroke: #ffffff;
   stroke-width: 2.5;
+  width: 28px;
+  height: 28px;
 }
 
 .capability.orange .capability-icon {
@@ -352,6 +356,8 @@ body {
 .capability.orange .capability-icon svg {
   stroke: #ffffff;
   stroke-width: 2.5;
+  width: 28px;
+  height: 28px;
 }
 
 .capability-info {
