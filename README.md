@@ -247,7 +247,7 @@ SATYA-DRISHTI/
 <td><img src="docs/Analyzing-Content.png" width="100%"/><br/><b>Analysis in Progress</b></td>
 </tr>
 <tr>
-<td><img src="docs/Url-Result.png" width="100%"/><br/><b>URL Analysis Results</b></td>
+<td><img src="docs/URL-Result.png" width="100%"/><br/><b>URL Analysis Results</b></td>
 <td><img src="docs/Image-Result.png" width="100%"/><br/><b>Image Analysis Results</b></td>
 </tr>
 <tr>
@@ -580,7 +580,7 @@ echo "VITE_API_URL=http://localhost:8001" > .env
 
 ---
 
-#### ▶Step 4: Launch Application
+#### Step 4: Launch Application
 
 **Open Two Terminal Windows**
 
