@@ -1,24 +1,18 @@
 services:
   - type: web
     name: satya-drishti-backend
-    env: docker
-    dockerfilePath: ./Dockerfile
+    env: python
+    region: singapore
     plan: free
+    branch: main
+    rootDir: social-intel-agent
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn src.app:app --workers 4 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:$PORT --timeout 120
     envVars:
-      - key: PORT
-        value: 8001
       - key: PYTHON_VERSION
         value: 3.11.0
-      - key: DEVELOPER
-        value: Abhishek Giri
+      - key: ENVIRONMENT
+        value: production
+      - key: LOG_LEVEL
+        value: INFO
     healthCheckPath: /health
-
-  - type: web
-    name: satya-drishti-frontend
-    env: static
-    buildCommand: cd react-interface && npm install && npm run build
-    staticPublishPath: ./react-interface/build
-    routes:
-      - type: rewrite
-        source: /*
-        destination: /index.html
