@@ -57,9 +57,8 @@ function ResultCard({ data }) {
       </div>
 
       <div className="accuracy-banner">
-        <div className="banner-icon">🎯</div>
         <div className="banner-content">
-          <div className="banner-title">AI-Powered Analysis Complete</div>
+          <div className="banner-title">🎯 AI-Powered Analysis Complete</div>
           <div className="banner-stats">
             <span>✓ 94% Accuracy</span>
             <span>✓ 7 AI Models</span>
@@ -146,7 +145,8 @@ function ResultCard({ data }) {
             </div>
             <div className="report-details">
               <div className="report-item">
-                <strong>Evidence Hash:</strong> {cybercellReport.evidence_hash}
+                <strong>Evidence Hash:</strong>
+                <div className="hash-value">{cybercellReport.evidence_hash}</div>
               </div>
               <div className="report-item">
                 <strong>Severity:</strong> <span className="severity-badge">{cybercellReport.severity}</span>
@@ -163,6 +163,27 @@ function ResultCard({ data }) {
                 </ul>
               </div>
             </div>
+            <button 
+              className="pdf-download-btn"
+              onClick={() => {
+                const reportData = {
+                  ...cybercellReport,
+                  analysis_id: data.analysis_id,
+                  url: data.url,
+                  platform: data.platform,
+                  timestamp: data.timestamp
+                };
+                const blob = new Blob([JSON.stringify(reportData, null, 2)], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `Cybercell_Report_${cybercellReport.report_id}.json`;
+                a.click();
+                URL.revokeObjectURL(url);
+              }}
+            >
+              Download Report (JSON)
+            </button>
           </div>
         </div>
       )}
@@ -191,7 +212,7 @@ function ResultCard({ data }) {
 
       {data.content_analysis && (
         <div className="stats-overview">
-          <h3>📊 Complete Analysis Summary</h3>
+          <h3>Complete Analysis Summary</h3>
           <div className="stats-grid">
             <div className="stat-box">
               <div className="stat-number">{data.content_analysis?.sentiment?.score ? (data.content_analysis.sentiment.score * 100).toFixed(1) : 0}%</div>
@@ -457,7 +478,7 @@ function ResultCard({ data }) {
       )}
 
       <div className="analysis-footer">
-        <span className="analysis-id">ID: {data.analysis_id}</span>
+        <span className="analysis-id">Analysis ID: {data.analysis_id}</span>
         <span className="timestamp">{new Date(data.timestamp).toLocaleString()}</span>
       </div>
     </div>

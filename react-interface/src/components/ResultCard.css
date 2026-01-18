@@ -1,17 +1,25 @@
 .result-card {
   background: white;
-  border-radius: 20px;
-  padding: 2.5rem;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  padding: 3rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin: 2rem auto;
   max-width: 1200px;
-  transition: transform 0.3s ease;
-  border: 2px solid #e2e8f0;
+  position: relative;
+}
+
+.result-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #FF9933 33.33%, #FFFFFF 33.33%, #FFFFFF 66.66%, #138808 66.66%);
 }
 
 .result-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 35px rgba(255, 107, 53, 0.2);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
 
 @keyframes slideUpFade {
@@ -26,16 +34,15 @@
 }
 
 .accuracy-banner {
-  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
-  padding: 1.5rem;
-  border-radius: 12px;
-  margin-bottom: 2rem;
+  background: #2563eb;
+  padding: 2rem;
+  border-radius: 4px;
+  margin-bottom: 2.5rem;
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2rem;
   color: white;
-  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
-  animation: slideIn 0.5s ease-out 0.2s both;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 @keyframes slideIn {
@@ -47,17 +54,6 @@
     opacity: 1;
     transform: translateX(0);
   }
-}
-
-.banner-icon {
-  font-size: 3rem;
-  flex-shrink: 0;
-  animation: rotate 2s ease-in-out infinite;
-}
-
-@keyframes rotate {
-  0%, 100% { transform: rotate(0deg); }
-  50% { transform: rotate(10deg); }
 }
 
 .banner-content {
@@ -100,19 +96,19 @@
 }
 
 .platform-badge {
-  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+  background: #1e40af;
   color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
+  padding: 0.6rem 1.5rem;
+  border-radius: 4px;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: transform 0.3s ease;
+  letter-spacing: 0.1em;
+  border: 2px solid #1e3a8a;
 }
 
 .platform-badge:hover {
-  transform: scale(1.05);
+  background: #1e3a8a;
 }
 
 .metadata-section {
@@ -226,36 +222,17 @@
 }
 
 .analysis-card {
-  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+  background: #f8fafc;
   padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: slideUp 0.5s ease-out both;
-}
-
-.analysis-card:nth-child(1) { animation-delay: 0.6s; }
-.analysis-card:nth-child(2) { animation-delay: 0.7s; }
-.analysis-card:nth-child(3) { animation-delay: 0.8s; }
-.analysis-card:nth-child(4) { animation-delay: 0.9s; }
-.analysis-card:nth-child(5) { animation-delay: 1.0s; }
-.analysis-card:nth-child(6) { animation-delay: 1.1s; }
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  border-radius: 4px;
+  border-left: 4px solid #1e40af;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
 }
 
 .analysis-card:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.15);
-  border-left: 4px solid #ff6b35;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  border-left-color: #FF9933;
 }
 
 .analysis-card h4 {
@@ -341,23 +318,12 @@
 }
 
 .stats-overview {
-  background: linear-gradient(135deg, #fff5f0 0%, #ffe8d9 100%);
+  background: #f8fafc;
   padding: 2rem;
-  border-radius: 16px;
+  border-radius: 4px;
   margin-bottom: 2rem;
-  border: 2px solid #ff6b35;
-  animation: fadeInScale 0.5s ease-out 0.4s both;
-}
-
-@keyframes fadeInScale {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  border: 2px solid #e2e8f0;
+  border-top: 4px solid #1e40af;
 }
 
 .stats-overview h3 {
@@ -960,6 +926,43 @@
   margin-bottom: 0.5rem;
   border-radius: 4px;
   color: #1e293b;
+}
+
+.hash-value {
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  color: #64748b;
+  word-break: break-all;
+  margin-top: 0.5rem;
+}
+
+.pdf-download-btn {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.pdf-download-btn:hover {
+  background: linear-gradient(135deg, #991b1b 0%, #7f1d1d 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(220, 38, 38, 0.4);
+}
+
+.pdf-download-btn:active {
+  transform: translateY(0);
 }
 
 @media (max-width: 768px) {

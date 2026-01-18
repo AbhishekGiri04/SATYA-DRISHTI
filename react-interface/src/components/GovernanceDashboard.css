@@ -28,6 +28,21 @@
   border: 2px solid #3b82f6;
   position: relative;
   overflow: hidden;
+  background-image: url('https://static.vecteezy.com/system/resources/thumbnails/016/729/927/small/india-flag-background-with-brush-style-and-halftone-effect-indian-tricolor-national-flag-illustration-with-grunge-concept-vector.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.dashboard-header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.92);
+  z-index: 0;
 }
 
 .dashboard-header::before {
@@ -49,6 +64,8 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: 15px;
+  position: relative;
+  z-index: 1;
 }
 
 .subtitle {
@@ -56,6 +73,8 @@
   color: #64748b;
   font-weight: 500;
   letter-spacing: 0.5px;
+  position: relative;
+  z-index: 1;
 }
 
 .stats-grid {

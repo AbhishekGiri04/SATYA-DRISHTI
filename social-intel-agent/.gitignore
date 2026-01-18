@@ -1,7 +1,32 @@
+# ============================================
+# SATYA-DRISHTI Backend - Python AI Service
+# Developer: Abhishek Giri
+# ============================================
+
+# ============================================
+# CRITICAL - SECRETS & ENVIRONMENT
+# ============================================
+.env
+.env.*
+*.env
+.env.local
+.env.production
+*.pem
+*.key
+*.cert
+secrets/
+credentials/
+
+# ============================================
+# PYTHON
+# ============================================
+# Byte-compiled / optimized
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
+
+# Distribution / packaging
 .Python
 build/
 develop-eggs/
@@ -18,17 +43,103 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
 
-.env
-.venv
-env/
+# Virtual Environment
 venv/
+env/
+.venv/
+ENV/
+env.bak/
+venv.bak/
 
+# ============================================
+# AI MODELS & CACHE
+# ============================================
+# HuggingFace Cache
+.transformers_cache/
+transformers_cache/
+.cache/
+cache/
+
+# Model files (KEEP yolov8s.pt)
+# *.pt  # Commented to keep yolov8s.pt
+*.pth
+*.ckpt
+*.h5
+*.pb
+*.onnx
+models/
+checkpoints/
+
+# ============================================
+# TESTING & COVERAGE
+# ============================================
 .pytest_cache/
 .coverage
+.coverage.*
 htmlcov/
+.tox/
+.nox/
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
 
-.DS_Store
+# ============================================
+# LOGS & DEBUGGING
+# ============================================
 *.log
+*.log.*
+logs/
+backend.log
+error.log
+*.pid
+
+# ============================================
+# DATABASE
+# ============================================
+*.db
+*.sqlite
+*.sqlite3
+mongodb_data/
+
+# ============================================
+# TEMPORARY FILES
+# ============================================
 temp/
+tmp/
 downloads/
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# ============================================
+# IDE & EDITORS
+# ============================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ============================================
+# OS FILES
+# ============================================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ============================================
+# JUPYTER NOTEBOOKS
+# ============================================
+.ipynb_checkpoints
+*.ipynb
+
+# ============================================
+# KEEP THESE FILES
+# ============================================
+!yolov8s.pt
+!requirements.txt
+!.env.example

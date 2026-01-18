@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from src.routers import analyze, health, image_analyze, governance, contact
-from src.database.mongodb import mongodb
 from src.config.logger import setup_logger
+from src.database.mongodb import mongodb
 
 app = FastAPI(
     title="Social Intelligence Agent",
@@ -39,10 +39,13 @@ app.include_router(contact.router)
 @app.on_event("startup")
 async def startup_event():
     logger.info("Social Intelligence Agent started")
-    await mongodb.connect()
+    # Try to connect to MongoDB
+    try:
+        await mongodb.connect()
+    except Exception as e:
+        logger.warning(f"MongoDB connection failed, running without database: {e}")
 
 # Shutdown event
 @app.on_event("shutdown")
 async def shutdown_event():
-    logger.info("Social Intelligence Agent shutting down")
     await mongodb.disconnect()

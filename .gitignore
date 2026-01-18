@@ -1,9 +1,38 @@
-# Python
+# ============================================
+# SATYA-DRISHTI - AI Content Moderation Platform
+# Developer: Abhishek Giri | GitHub: abhishekgiri04
+# ============================================
+
+# ============================================
+# CRITICAL - SECURITY & SECRETS
+# ============================================
+.env
+.env.*
+*.env
+.env.local
+.env.production
+.env.development
+social-intel-agent/.env
+react-interface/.env
+*.pem
+*.key
+*.cert
+*.p12
+secrets/
+credentials/
+config/secrets.py
+api_keys.txt
+
+# ============================================
+# PYTHON BACKEND
+# ============================================
+# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
-.Python
+
+# Distribution / packaging
 build/
 develop-eggs/
 dist/
@@ -16,116 +45,403 @@ parts/
 sdist/
 var/
 wheels/
+pip-wheel-metadata/
+share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
 MANIFEST
 
-# Virtual Environment
+# Virtual Environments
 venv/
 env/
 ENV/
 env.bak/
 venv.bak/
+social-intel-agent/venv/
 
-# PyTorch & AI Models
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# pyenv
+.python-version
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# ============================================
+# AI MODELS & CACHE
+# ============================================
+# PyTorch Models (KEEP yolov8s.pt - it's needed)
+# *.pt  # Commented out to keep yolov8s.pt
 *.pth
-*.pt
 *.ckpt
 *.h5
 *.pb
 *.onnx
 models/
 checkpoints/
-cache/
-.cache/
+saved_models/
 
 # HuggingFace Cache
 .transformers_cache/
 transformers_cache/
+.cache/
+cache/
+huggingface/
 
-# Jupyter Notebook
-.ipynb_checkpoints
-*.ipynb
+# Model Downloads
+*.bin
+*.safetensors
 
-# Environment Variables - CRITICAL
-.env
-.env.local
-.env.*.local
-*.env
-.env.production
-.env.development
-social-intel-agent/.env
-react-interface/.env
-
-# IDEs
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-.DS_Store
-
-# Logs
-*.log
-logs/
-*.log.*
-
-# Database
-*.db
-*.sqlite
-*.sqlite3
-
-# Node.js (React Frontend)
+# ============================================
+# REACT FRONTEND
+# ============================================
+# Dependencies
 node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-package-lock.json
-yarn.lock
+react-interface/node_modules/
+/.pnp
+.pnp.js
 
-# React Build
+# Testing
+/coverage
+react-interface/coverage/
+
+# Production Build
 react-interface/build/
 react-interface/dist/
 react-interface/.vite/
 
-# Testing
-.coverage
-htmlcov/
-.pytest_cache/
-.tox/
-
-# OS
+# Misc
 .DS_Store
-Thumbs.db
-desktop.ini
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-# Temporary Files
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+pnpm-debug.log*
+
+# Lock files (optional - uncomment if you want to ignore)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# ============================================
+# DATABASE
+# ============================================
+*.db
+*.sqlite
+*.sqlite3
+*.mongodb
+mongodb_data/
+data/
+
+# MongoDB dumps
+dump/
+*.bson
+
+# ============================================
+# LOGS & DEBUGGING
+# ============================================
+*.log
+*.log.*
+logs/
+backend.log
+frontend.log
+error.log
+access.log
+combined.log
+*.pid
+
+# ============================================
+# IDEs & EDITORS
+# ============================================
+# VSCode
+.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+.vim/
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+
+# ============================================
+# OPERATING SYSTEM
+# ============================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ============================================
+# TEMPORARY & BACKUP FILES
+# ============================================
 *.tmp
 *.temp
-temp/
-tmp/
-
-# Large Files
-*.zip
-*.tar.gz
-*.rar
-
-# Secrets & Keys - CRITICAL
-*.pem
-*.key
-*.cert
-secrets/
-credentials/
-config/secrets.py
-
-# MongoDB
-*.mongodb
-
-# Backup Files
 *.bak
 *.backup
+*.swp
 *_OLD.*
 *_BACKUP.*
-.env
-social-intel-agent/.env
+*_old
+*_backup
+temp/
+tmp/
+.temp/
+
+# ============================================
+# COMPRESSED FILES
+# ============================================
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+*.gz
+*.bz2
+*.xz
+
+# ============================================
+# MEDIA FILES (Large)
+# ============================================
+# Uncomment if you don't want to track large media
+# *.mp4
+# *.avi
+# *.mov
+# *.mkv
+# *.flv
+# *.wmv
+
+# ============================================
+# DOCUMENTATION BUILD
+# ============================================
+docs/_build/
+docs/.doctrees/
+site/
+
+# ============================================
+# DEPLOYMENT
+# ============================================
+.vercel
+.netlify
+.firebase/
+.serverless/
+.aws-sam/
+
+# Docker
+docker-compose.override.yml
+.dockerignore
+
+# ============================================
+# MISC
+# ============================================
+# Thumbnails
+*.thumb
+
+# Image cache
+.image_cache/
+
+# Session files
+.session
+
+# PID files
+*.pid
+*.seed
+*.pid.lock
+
+# Directory for instrumented libs
+lib-cov
+
+# nyc test coverage
+.nyc_output
+
+# Grunt intermediate storage
+.grunt
+
+# Bower dependency directory
+bower_components
+
+# node-waf configuration
+.lock-wscript
+
+# Compiled binary addons
+build/Release
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# parcel-bundler cache
+.parcel-cache
+
+# Next.js build output
+.next
+out
+
+# Nuxt.js build / generate output
+.nuxt
+dist
+
+# Gatsby files
+.cache/
+public
+
+# Storybook build outputs
+.out
+.storybook-out
+storybook-static
+
+# Temporary folders
+tmp/
+temp/
+
+# ============================================
+# PROJECT SPECIFIC
+# ============================================
+# Analysis results (if storing locally)
+analysis_results/
+reports/
+
+# Test data
+test_data/
+sample_data/
+
+# Screenshots (if auto-generated)
+screenshots/
+
+# Uploads directory
+uploads/
+
+# ============================================
+# KEEP THESE FILES (DO NOT IGNORE)
+# ============================================
+# !yolov8s.pt  # Keep YOLO model
+# !requirements.txt
+# !package.json
+# !README.md
+# !LICENSE

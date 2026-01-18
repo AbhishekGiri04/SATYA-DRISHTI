@@ -1,21 +1,124 @@
-# Dependencies
-node_modules/
+# ============================================
+# SATYA-DRISHTI Frontend - React + Vite
+# Developer: Abhishek Giri
+# ============================================
 
-# Build output
+# ============================================
+# CRITICAL - SECRETS & ENVIRONMENT
+# ============================================
+.env
+.env.*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ============================================
+# DEPENDENCIES
+# ============================================
+node_modules/
+/.pnp
+.pnp.js
+
+# ============================================
+# BUILD OUTPUT
+# ============================================
 dist/
 build/
+.vite/
+.cache/
 
-# Environment variables
-.env
-.env.local
-.env.production
+# ============================================
+# TESTING
+# ============================================
+coverage/
+.nyc_output/
 
-# Logs
+# ============================================
+# LOGS
+# ============================================
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 *.log
 
-# Editor
+# ============================================
+# IDE & EDITORS
+# ============================================
 .vscode/
 .idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
 
-# OS
+# ============================================
+# OS FILES
+# ============================================
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ============================================
+# TEMPORARY FILES
+# ============================================
+*.tmp
+*.temp
+.temp/
+tmp/
+
+# ============================================
+# MISC
+# ============================================
+# Vite cache
+.vite-cache/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional npm cache
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# Parcel cache
+.parcel-cache
+
+# Next.js (if migrating)
+.next/
+out/
+
+# Storybook
+.out
+.storybook-out
+storybook-static
+
+# Vercel
+.vercel
+
+# ============================================
+# LOCK FILES (Optional - Uncomment to ignore)
+# ============================================
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# ============================================
+# KEEP THESE FILES
+# ============================================
+!.env.example
+!package.json
+!vite.config.js
+!index.html

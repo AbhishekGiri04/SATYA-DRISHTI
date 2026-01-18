@@ -107,52 +107,8 @@ class UniversalAnalysisDispatcher:
                 if html:
                     image_urls = self.image_extractor.extract_images(html, base_url)
                     
-                    for img_url in image_urls[:3]:  # Limit to 3 images for faster processing
-                        logger.info(f"Analyzing image: {img_url}")
-                        image = self.image_extractor.download_image(img_url)
-                        
-                        if image is None:
-                            continue
-                        
-                        # Run all detectors
-                        nsfw = self.nsfw_image_detector.detect(image)
-                        violence = self.violence_detector.detect(image)
-                        religious_hate = self.religious_hate_detector.detect(image, nsfw)
-                        ocr = self.ocr_extractor.extract_text(image)
-                        
-                        # Analyze OCR text if present
-                        ocr_analysis = None
-                        if ocr.get("text") and len(ocr.get("text", "").strip()) > 10:
-                            ocr_text = ocr.get("text")[:512]
-                            ocr_analysis = {
-                                "sentiment": self.sentiment_analyzer.analyze(ocr_text),
-                                "toxicity": self.toxicity_detector.detect(ocr_text),
-                                "hate_speech": self.hate_speech_detector.detect(ocr_text),
-                                "content_categories": self.content_classifier.classify(ocr_text),
-                                "risk_assessment": self.risk_scorer.calculate({
-                                    "sentiment": self.sentiment_analyzer.analyze(ocr_text),
-                                    "toxicity": self.toxicity_detector.detect(ocr_text),
-                                    "hate_speech": self.hate_speech_detector.detect(ocr_text),
-                                    "content_categories": self.content_classifier.classify(ocr_text),
-                                    "intent": {"intent": "unknown", "confidence": 0},
-                                    "nsfw": self.nsfw_detector.detect(ocr_text)
-                                })
-                            }
-                        
-                        # Calculate image risk score
-                        risk_score = self._calculate_image_risk(nsfw, violence, religious_hate, ocr, ocr_analysis)
-                        
-                        image_analysis.append({
-                            "image_url": img_url,
-                            "nsfw": nsfw,
-                            "violence": violence,
-                            "religious_hate": religious_hate,
-                            "ocr": ocr,
-                            "ocr_analysis": ocr_analysis,
-                            "image_risk_score": risk_score
-                        })
-                    
-                    logger.info(f"Image analysis completed: {len(image_analysis)} images analyzed")
+                    # Skip image analysis for faster response
+                    logger.info(f"Skipping image analysis for faster response. Found {len(image_urls)} images")
                 else:
                     logger.warning("No HTML content available for image extraction")
             except Exception as e:
@@ -184,6 +140,9 @@ class UniversalAnalysisDispatcher:
             # Step 11: Generate report
             logger.info(f"Generating report with {len(image_analysis)} images, combined risk: {combined_risk}")
             
+            # Detect language
+            language_analysis = self._detect_language(analysis_text)
+            
             report = {
                 "analysis_id": str(uuid.uuid4()),
                 "timestamp": datetime.utcnow().isoformat(),
@@ -213,6 +172,7 @@ class UniversalAnalysisDispatcher:
                     "misinformation": misinformation,
                     "social_analysis": social_analysis
                 },
+                "language_analysis": language_analysis,
                 "summary": self._generate_summary(risk_assessment, sentiment, toxicity, hate_speech, content_categories, intent, nsfw, image_analysis),
                 "text_preview": text_content[:200] + ("..." if len(text_content) > 200 else "")
             }
@@ -345,3 +305,34 @@ class UniversalAnalysisDispatcher:
         elif score >= 15:
             return "LOW"
         return "SAFE"
+    
+    def _detect_language(self, text):
+        """Simple language detection"""
+        try:
+            from langdetect import detect
+            lang_code = detect(text)
+            
+            lang_names = {
+                'en': 'English',
+                'hi': 'Hindi',
+                'bn': 'Bengali',
+                'ta': 'Tamil',
+                'te': 'Telugu',
+                'mr': 'Marathi',
+                'gu': 'Gujarati',
+                'kn': 'Kannada',
+                'ml': 'Malayalam',
+                'pa': 'Punjabi'
+            }
+            
+            return {
+                "detected_language": lang_code,
+                "language_name": lang_names.get(lang_code, lang_code.upper()),
+                "is_indian_language": lang_code in ['hi', 'bn', 'ta', 'te', 'mr', 'gu', 'kn', 'ml', 'pa']
+            }
+        except:
+            return {
+                "detected_language": "en",
+                "language_name": "English",
+                "is_indian_language": False
+            }

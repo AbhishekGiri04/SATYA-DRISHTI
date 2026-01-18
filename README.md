@@ -155,15 +155,18 @@ SATYA-DRISHTI/
 │   │   │   ├── 📄 Navbar.css              # Navbar styles
 │   │   │   ├── 📄 ResultCard.jsx          # Analysis result card
 │   │   │   └── 📄 ResultCard.css          # Result card styles
-│   │   ├── 📄 Security.json               # Security animation data
 │   │   ├── 📄 App.jsx                     # Main application
 │   │   ├── 📄 App.css                     # Global styles
 │   │   ├── 📄 main.jsx                    # Entry point
-│   │   └── 📄 emblem.svg                  # Government emblem
+│   │   ├── 📄 Security.json               # Security animation data
+│   │   ├── 📄 emblem.svg                  # Government emblem
+│   │   └── 📄 favicon.svg                 # Favicon icon
 │   ├── 📄 index.html                      # HTML template
 │   ├── 📄 package.json                    # Frontend dependencies
+│   ├── 📄 package-lock.json               # Dependency lock file
 │   ├── 📄 vite.config.js                  # Vite configuration
-│   └── 📄 .env.example                    # Environment template
+│   ├── 📄 .env.example                    # Environment template
+│   └── 📄 .gitignore                      # Git ignore patterns
 ├── 📂 social-intel-agent/                 # FastAPI Backend (Port 8001)
 │   ├── 📂 src/
 │   │   ├── 📂 analysis/                   # AI Analysis Engines
@@ -181,36 +184,42 @@ SATYA-DRISHTI/
 │   │   │   ├── 📄 analyze.py              # Content analysis endpoints
 │   │   │   ├── 📄 image_analyze.py        # Image analysis endpoints
 │   │   │   ├── 📄 governance.py           # Governance endpoints
-│   │   │   └── 📄 health.py               # Health check endpoints
+│   │   │   ├── 📄 health.py               # Health check endpoints
+│   │   │   └── 📄 contact.py              # Contact form endpoints
 │   │   ├── 📂 scraping/                   # Platform Adapters
 │   │   │   ├── 📂 adapters/               # Platform-specific scrapers
 │   │   │   ├── 📄 platform_detector.py    # Platform detection
 │   │   │   └── 📄 universal_extractor.py  # Universal content extractor
 │   │   ├── 📂 services/                   # External Services
 │   │   │   ├── 📄 universal_dispatcher.py # Service dispatcher
-│   │   │   └── 📄 universal_scraper_service.py # Scraper service
-│   │   └── 📄 app.py                      # Main FastAPI application
+│   │   │   ├── 📄 universal_scraper_service.py # Scraper service
+│   │   │   └── 📄 email_service.py        # Email notification service
+│   │   ├── 📄 app.py                      # Main FastAPI application
+│   │   └── 📄 app_minimal.py              # Minimal FastAPI app
 │   ├── 📄 requirements.txt                # Python dependencies
 │   ├── 📄 yolov8s.pt                      # YOLO model weights
-│   └── 📄 .env.example                    # Environment template
+│   ├── 📄 backend.log                     # Application logs
+│   ├── 📄 .env.example                    # Environment template
+│   └── 📄 .gitignore                      # Git ignore patterns
 ├── 📂 docs/                               # Documentation & Assets
 │   ├── 📄 SATYA-DRISHTI.jpeg              # Project banner
 │   ├── 📄 ProblemStatement.png            # Problem overview
 │   ├── 📄 OurSolution.png                 # Solution overview
 │   ├── 📄 KeyFeatures.jpeg                # Features overview
-│   ├── 📄 Architecture.jpeg               # System architecture
+│   ├── 📄 Architecture.png                # System architecture
 │   ├── 📄 Architecture-Diagrams.png       # Detailed diagrams
 │   ├── 📄 TechnicalStack.png              # Tech stack overview
 │   ├── 📄 SetupInstructions.png           # Setup guide
-│   ├── 📄 Loading.png                     # Loading screen
+│   ├── 📄 LoadingPage.png                 # Loading screen
 │   ├── 📄 HomePage.png                    # Home page
 │   ├── 📄 HowItWorks.png                  # How it works
 │   ├── 📄 Analyzing-Content.png           # Analysis in progress
-│   ├── 📄 Result.png                      # Analysis results
+│   ├── 📄 URL-Result.png                  # URL analysis results
+│   ├── 📄 Image-Result.png                # Image analysis results
 │   ├── 📄 GovernanceDashboard.png         # Dashboard
-│   ├── 📄 About.png                       # About page
-│   ├── 📄 Contact.png                     # Contact page
-│   ├── 📄 CodeCatalyst.jpeg               # Team photo
+│   ├── 📄 AboutPage.png                   # About page
+│   ├── 📄 ContactPage.png                 # Contact page
+│   ├── 📄 CodeCatalyst.jpg                # Team photo
 │   ├── 📄 AbhishekGiri.jpg                # Team member
 │   ├── 📄 AthravGangwar.jpeg              # Team member
 │   ├── 📄 MuskanSharma.jpeg               # Team member
@@ -219,9 +228,9 @@ SATYA-DRISHTI/
 ├── 📄 LICENSE                             # MIT License
 ├── 📄 .env.example                        # Root environment template
 ├── 📄 .gitignore                          # Git ignore patterns
+├── 📄 .dockerignore                       # Docker ignore patterns
 ├── 📄 Dockerfile                          # Docker configuration
 ├── 📄 render.yaml                         # Render deployment config
-├── 📄 INSTALL.sh                          # Installation script
 └── 📄 run.sh                              # Development server script
 ```
 ---
@@ -230,20 +239,23 @@ SATYA-DRISHTI/
 
 <table>
 <tr>
-<td><img src="docs/Loading.png" width="100%"/><br/><b>🔄 Loading Screen</b></td>
-<td><img src="docs/HomePage.png" width="100%"/><br/><b>🏠 Home Page</b></td>
+<td><img src="docs/LoadingPage.png" width="100%"/><br/><b>Loading Screen</b></td>
+<td><img src="docs/HomePage.png" width="100%"/><br/><b>Home Page</b></td>
 </tr>
 <tr>
-<td><img src="docs/HowItWorks.png" width="100%"/><br/><b>⚙️ How It Works</b></td>
-<td><img src="docs/Analyzing-Content.png" width="100%"/><br/><b>🔍 Analysis in Progress</b></td>
+<td><img src="docs/HowItWorks.png" width="100%"/><br/><b>How It Works</b></td>
+<td><img src="docs/Analyzing-Content.png" width="100%"/><br/><b>Analysis in Progress</b></td>
 </tr>
 <tr>
-<td><img src="docs/Result.png" width="100%"/><br/><b>📊 Analysis Results</b></td>
-<td><img src="docs/GovernanceDashboard.png" width="100%"/><br/><b>📈 Governance Dashboard</b></td>
+<td><img src="docs/Url-Result.png" width="100%"/><br/><b>URL Analysis Results</b></td>
+<td><img src="docs/Image-Result.png" width="100%"/><br/><b>Image Analysis Results</b></td>
 </tr>
 <tr>
-<td><img src="docs/About.png" width="100%"/><br/><b>ℹ️ About Page</b></td>
-<td><img src="docs/Contact.png" width="100%"/><br/><b>📧 Contact Page</b></td>
+<td><img src="docs/GovernanceDashboard.png" width="100%"/><br/><b>Governance Dashboard</b></td>
+<td><img src="docs/AboutPage.png" width="100%"/><br/><b>About Page</b></td>
+</tr>
+<tr>
+<td colspan="2"><img src="docs/ContactPage.png" width="50%" style="display: block; margin: 0 auto;"/><br/><b>Contact Page</b></td>
 </tr>
 </table>
 
@@ -281,9 +293,13 @@ graph TD
 
 </div>
 
+<div align="center">
+
 ## Technical Flow Diagrams
 
 ### Data Flow Diagram (Level 0)
+
+</div>
 
 ```mermaid
 graph LR
@@ -303,7 +319,11 @@ graph LR
     style G fill:#FFF3E0,stroke:#FF9800,stroke-width:2px,color:#000
 ```
 
+<div align="center">
+
 ### Data Flow Diagram (Level 1)
+
+</div>
 
 ```mermaid
 graph TD
@@ -331,7 +351,11 @@ graph TD
     style K fill:#EDE7F6,stroke:#673AB7,stroke-width:2px,color:#000
 ```
 
+<div align="center">
+
 ### AI Analysis Engine Flow
+
+</div>
 
 ```mermaid
 graph TD
@@ -360,8 +384,6 @@ graph TD
     style I fill:#F1F8E9,stroke:#8BC34A,stroke-width:2px,color:#000
     style J fill:#C8E6C9,stroke:#4CAF50,stroke-width:2px,color:#000
 ```
-
----
 
 <div align="center">
 
@@ -490,7 +512,7 @@ graph LR
     style E fill:#C8E6C9,stroke:#4CAF50,stroke-width:3px,color:#000
 ```
 
-#### 📥 Step 1: Clone Repository
+#### Step 1: Clone Repository
 
 ```bash
 # Clone the repository
@@ -502,7 +524,7 @@ cd SATYA-DRISHTI
 
 ---
 
-#### 🐍 Step 2: Backend Setup (FastAPI + AI Models)
+#### Step 2: Backend Setup (FastAPI + AI Models)
 
 ```bash
 # Navigate to backend directory
@@ -530,7 +552,7 @@ cp .env.example .env
 # - API keys for external services
 ```
 
-**⚙️ Environment Configuration (.env)**
+**Environment Configuration (.env)**
 
 | Variable | Description | Example |
 |----------|-------------|----------|
@@ -540,7 +562,7 @@ cp .env.example .env
 
 ---
 
-#### ⚛️ Step 3: Frontend Setup (React + Vite)
+#### Step 3: Frontend Setup (React + Vite)
 
 ```bash
 # Navigate to frontend directory (from project root)
@@ -558,11 +580,11 @@ echo "VITE_API_URL=http://localhost:8001" > .env
 
 ---
 
-#### ▶️ Step 4: Launch Application
+#### ▶Step 4: Launch Application
 
-**🔥 Open Two Terminal Windows**
+**Open Two Terminal Windows**
 
-**🖥️ Terminal 1: Backend Server**
+**Terminal 1: Backend Server**
 
 ```bash
 # Navigate to backend
@@ -575,7 +597,7 @@ source venv/bin/activate
 uvicorn src.app:app --host 0.0.0.0 --port 8001 --reload
 ```
 
-**🎨 Terminal 2: Frontend Server**
+**Terminal 2: Frontend Server**
 
 ```bash
 # Navigate to frontend
@@ -587,7 +609,7 @@ npm run dev
 
 ---
 
-#### ✅ Step 5: Access Application
+#### Step 5: Access Application
 
 | 🌐 Service | 🔗 URL | 📝 Description |
 |---------|---------|-------------|
@@ -680,166 +702,6 @@ gunicorn src.app:app \
 - ✅ Load balancer (Nginx)
 - ✅ SSL/TLS certificates
 - ✅ Redis caching layer
-
----
-
-## 📡 API Documentation
-
-**Interactive API Docs:**
-- **Swagger UI**: [http://localhost:8001/docs](http://localhost:8001/docs)
-- **ReDoc**: [http://localhost:8001/redoc](http://localhost:8001/redoc)
-
----
-
-### Core Endpoints
-
-#### 1️⃣ Analyze Content
-
-**Endpoint**: `POST /analyze/`
-
-**Description**: Analyzes social media content for harmful material, hate speech, toxicity, and legal violations.
-
-**Request**:
-```bash
-curl -X POST http://localhost:8001/analyze/ \
-  -H "Content-Type: application/json" \
-  -d '{
-    "url": "https://twitter.com/example/status/123456789"
-  }'
-```
-
-**Response** (200 OK):
-```json
-{
-  "analysis_id": "550e8400-e29b-41d4-a716-446655440000",
-  "timestamp": "2025-12-05T10:30:00Z",
-  "platform": "twitter",
-  "url": "https://twitter.com/example/status/123456789",
-  
-  "risk_assessment": {
-    "score": 75,
-    "level": "HIGH",
-    "confidence": 0.87,
-    "recommendation": "Immediate review required"
-  },
-  
-  "content_analysis": {
-    "text": {
-      "sentiment": {
-        "label": "negative",
-        "score": 0.89,
-        "confidence": 0.92
-      },
-      "toxicity": {
-        "is_toxic": true,
-        "confidence": 0.82,
-        "categories": ["insult", "threat"]
-      },
-      "hate_speech": {
-        "is_hate_speech": true,
-        "confidence": 0.76,
-        "target_groups": ["religious"]
-      },
-      "intent": {
-        "category": "harmful",
-        "confidence": 0.84
-      }
-    },
-    "image": {
-      "nsfw_detected": false,
-      "violence_detected": true,
-      "confidence": 0.78
-    }
-  },
-  
-  "governance": {
-    "language": "en",
-    "vishwaas_score": 35,
-    "source_credibility": "low",
-    "fact_check_status": "disputed"
-  },
-  
-  "cybercell_report": {
-    "report_id": "CR-20250105-12345",
-    "severity": "HIGH",
-    "legal_sections": [
-      "IPC 153A - Promoting enmity",
-      "IT Act 67 - Publishing obscene content"
-    ],
-    "evidence_hash": "sha256:a3b2c1d4e5f6...",
-    "admissible": true
-  }
-}
-```
-
----
-
-#### 2️⃣ Get Analysis by ID
-
-**Endpoint**: `GET /analysis/{analysis_id}`
-
-```bash
-curl -X GET http://localhost:8001/analysis/550e8400-e29b-41d4-a716-446655440000
-```
-
----
-
-#### 3️⃣ Get Statistics
-
-**Endpoint**: `GET /statistics/`
-
-```bash
-curl -X GET http://localhost:8001/statistics/
-```
-
-**Response**:
-```json
-{
-  "total_analyses": 15420,
-  "risk_distribution": {
-    "SAFE": 8234,
-    "LOW": 3456,
-    "MEDIUM": 2100,
-    "HIGH": 1230,
-    "CRITICAL": 400
-  },
-  "platform_breakdown": {
-    "twitter": 6500,
-    "reddit": 4200,
-    "instagram": 2800,
-    "youtube": 1920
-  },
-  "avg_processing_time": "12.3s"
-}
-```
-
----
-
-#### 4️⃣ Health Check
-
-**Endpoint**: `GET /health`
-
-```bash
-curl -X GET http://localhost:8001/health
-```
-
-**Response**:
-```json
-{
-  "status": "healthy",
-  "version": "1.0.0",
-  "models_loaded": 12,
-  "database_connected": true
-}
-```
-
----
-
-### 📚 Full Documentation
-
-For complete API reference with all endpoints, request/response schemas, and interactive testing:
-
-👉 **Visit**: [http://localhost:8001/docs](http://localhost:8001/docs)
 
 ---
 
